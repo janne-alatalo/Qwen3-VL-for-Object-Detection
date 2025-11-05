@@ -3,6 +3,9 @@ import argparse
 import base64
 import json
 import mimetypes
+import os
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
@@ -32,7 +35,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model",
-        default="/storage/proj/llm/hf-transformers-models/Qwen3-VL-30B-A3B-Thinking",
+        default="qwen3-VL",
         help="Model name to request from the server (default: %(default)s).",
     )
     parser.add_argument(
@@ -155,6 +158,18 @@ def draw_bounding_boxes(
     return output_path
 
 
+def open_image_viewer(image_path: Path) -> None:
+    try:
+        if sys.platform.startswith("darwin"):
+            subprocess.run(["open", str(image_path)], check=False)
+        elif os.name == "nt":
+            os.startfile(image_path)  # type: ignore[attr-defined]
+        else:
+            subprocess.run(["xdg-open", str(image_path)], check=False)
+    except Exception as exc:
+        print(f"Failed to open image viewer automatically: {exc}")
+
+
 def main() -> None:
     args = parse_args()
     if not args.image_path.is_file():
@@ -186,6 +201,7 @@ def main() -> None:
 
     print(json.dumps(detections, indent=2))
     print(f"Saved annotated image to: {output_image}")
+    open_image_viewer(output_image)
 
 
 if __name__ == "__main__":
