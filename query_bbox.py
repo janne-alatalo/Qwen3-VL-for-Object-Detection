@@ -3,8 +3,6 @@ import argparse
 import base64
 import json
 import mimetypes
-import os
-import subprocess
 import sys
 from json import JSONDecodeError
 from pathlib import Path
@@ -67,6 +65,11 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=REQUEST_TIMEOUT_DEFAULT,
         help="Request timeout in seconds for the model API.",
+    )
+    parser.add_argument(
+        "--save-path",
+        type=Path,
+        help="Optional path to save the annotated image. Treats directories as output folders.",
     )
     return parser.parse_args()
 
@@ -147,9 +150,9 @@ def normalize_bbox(
     ]
 
 
-def draw_bounding_boxes(
+def render_bounding_boxes(
     image_path: Path, detections: List[Dict[str, Any]]
-) -> Path:
+) -> Image.Image:
     image = Image.open(image_path).convert("RGB")
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default()
@@ -171,9 +174,7 @@ def draw_bounding_boxes(
             text_pos = (x1, max(0, y1 - 12))
             draw.text(text_pos, label, fill="red", font=font)
 
-    output_path = image_path.with_stem(f"{image_path.stem}_bbox")
-    image.save(output_path)
-    return output_path
+    return image
 
 
 def request_completion(api_base: str, payload: Dict[str, Any], timeout: float) -> Dict[str, Any]:
@@ -302,15 +303,19 @@ def sanitize_detections(detections: Sequence[Dict[str, Any]]) -> List[Dict[str, 
     return cleaned
 
 
-def open_image_viewer(image_path: Path) -> None:
+def resolve_save_path(requested: Path, source_image: Path, suffix: str) -> Path:
+    extension = source_image.suffix or ".png"
+    if requested.exists() and requested.is_dir():
+        return requested / f"{source_image.stem}{suffix}{extension}"
+    if requested.suffix:
+        return requested
+    return requested / f"{source_image.stem}{suffix}{extension}"
+
+
+def show_image(image: Image.Image, title: str) -> None:
     try:
-        if sys.platform.startswith("darwin"):
-            subprocess.run(["open", str(image_path)], check=False)
-        elif os.name == "nt":
-            os.startfile(image_path)  # type: ignore[attr-defined]
-        else:
-            subprocess.run(["xdg-open", str(image_path)], check=False)
-    except Exception as exc:
+        image.show(title=title)
+    except Exception as exc:  # pragma: no cover - best effort utility
         warn(f"Failed to open image viewer automatically: {exc}")
 
 
@@ -332,11 +337,17 @@ def main() -> None:
 
     detections_to_draw = sanitized_detections if sanitized_detections else detections
 
-    output_image = draw_bounding_boxes(args.image_path, detections_to_draw)
+    annotated_image = render_bounding_boxes(args.image_path, detections_to_draw)
 
     print(json.dumps(detections_to_draw, indent=2))
-    print(f"Saved annotated image to: {output_image}")
-    open_image_viewer(output_image)
+
+    if args.save_path is not None:
+        save_target = resolve_save_path(args.save_path, args.image_path, "_bbox")
+        save_target.parent.mkdir(parents=True, exist_ok=True)
+        annotated_image.save(save_target)
+        print(f"Saved annotated image to: {save_target}")
+
+    show_image(annotated_image, title=f"{args.image_path.name} detections")
 
 
 if __name__ == "__main__":

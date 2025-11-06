@@ -3,8 +3,6 @@ import argparse
 import base64
 import json
 import mimetypes
-import os
-import subprocess
 import sys
 from json import JSONDecodeError
 from pathlib import Path
@@ -113,6 +111,11 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=REQUEST_TIMEOUT_DEFAULT,
         help="Request timeout in seconds for the model API.",
+    )
+    parser.add_argument(
+        "--save-path",
+        type=Path,
+        help="Optional path to save the annotated pose image. Treats directories as output folders.",
     )
     return parser.parse_args()
 
@@ -312,6 +315,15 @@ def sanitize_keypoints(keypoints: Sequence[Dict[str, Any]]) -> List[Dict[str, An
     return cleaned
 
 
+def resolve_save_path(requested: Path, source_image: Path, suffix: str) -> Path:
+    extension = source_image.suffix or ".png"
+    if requested.exists() and requested.is_dir():
+        return requested / f"{source_image.stem}{suffix}{extension}"
+    if requested.suffix:
+        return requested
+    return requested / f"{source_image.stem}{suffix}{extension}"
+
+
 def normalize_point(point: List[int], width: int, height: int) -> List[int]:
     if len(point) != 2:
         raise ValueError(f"Expected point of length 2, got {point}")
@@ -324,7 +336,7 @@ def normalize_point(point: List[int], width: int, height: int) -> List[int]:
     ]
 
 
-def draw_keypoints(image_path: Path, keypoints: List[Dict[str, Any]]) -> Path:
+def render_keypoints(image_path: Path, keypoints: List[Dict[str, Any]]) -> Image.Image:
     image = Image.open(image_path).convert("RGB")
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default()
@@ -356,19 +368,12 @@ def draw_keypoints(image_path: Path, keypoints: List[Dict[str, Any]]) -> Path:
         draw.ellipse([x - radius, y - radius, x + radius, y + radius], fill="red", outline="white")
         draw.text((x + radius + 2, y - radius - 2), label, fill="red", font=font)
 
-    output_path = image_path.with_stem(f"{image_path.stem}_pose")
-    image.save(output_path)
-    return output_path
+    return image
 
 
-def open_image_viewer(image_path: Path) -> None:
+def show_image(image: Image.Image, title: str) -> None:
     try:
-        if sys.platform.startswith("darwin"):
-            subprocess.run(["open", str(image_path)], check=False)
-        elif os.name == "nt":
-            os.startfile(image_path)  # type: ignore[attr-defined]
-        else:
-            subprocess.run(["xdg-open", str(image_path)], check=False)
+        image.show(title=title)
     except Exception as exc:  # pragma: no cover - best effort utility
         warn(f"Failed to open image viewer automatically: {exc}")
 
@@ -398,11 +403,17 @@ def main() -> None:
         )
 
     output_keypoints = sanitized_keypoints if sanitized_keypoints else keypoints
-    output_image = draw_keypoints(args.image_path, output_keypoints)
+    annotated_image = render_keypoints(args.image_path, output_keypoints)
 
     print(json.dumps(output_keypoints, indent=2))
-    print(f"Saved annotated image to: {output_image}")
-    open_image_viewer(output_image)
+
+    if args.save_path is not None:
+        save_target = resolve_save_path(args.save_path, args.image_path, "_pose")
+        save_target.parent.mkdir(parents=True, exist_ok=True)
+        annotated_image.save(save_target)
+        print(f"Saved annotated image to: {save_target}")
+
+    show_image(annotated_image, title=f"{args.image_path.name} pose")
 
 
 if __name__ == "__main__":

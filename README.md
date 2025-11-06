@@ -32,12 +32,13 @@ Key flags:
 - `--model`: Model name served by vLLM (default `qwen3-VL`)
 - `--max-tokens`: Increase if the model truncates responses (default `10000`)
 - `--timeout`: Request timeout in seconds (default `120`)
+- `--save-path`: Optional file or directory to persist the annotated image
 
 Output:
 
 - Prints normalized detections (labels plus `[x1, y1, x2, y2]` in full image pixels)
-- Saves an annotated image alongside the original (`*_bbox.*`)
-- Opens the annotated image automatically (best effort)
+- Shows the annotated image using the OS default viewer (best effort)
+- Saves only when `--save-path` is supplied; directories are treated as output folders
 
 If the call fails or the response is malformed, the script surfaces the error on stderr with actionable hints.
 
@@ -57,6 +58,7 @@ The system prompt asks the model for the canonical 17 joints (nose, eyes, ears, 
 - Opens the annotated image automatically
 
 You can tune `--max-tokens`, `--timeout`, or request a different model with `--model`.
+- Use `--save-path` to persist the rendered skeleton to a specific directory or file; otherwise only the viewer opens.
 
 ## Troubleshooting
 
