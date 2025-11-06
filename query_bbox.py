@@ -119,40 +119,79 @@ def build_payload(
         raise ValueError("Specify either --example or --context-image, not both.")
 
     if examples:
-        for index, (example_image, example_response) in enumerate(examples, 1):
+        first_image, first_response = examples[0]
+        first_content: List[Dict[str, Any]] = [
+            {"type": "input_text", "text": prompt},
+            {
+                "type": "input_text",
+                "text": (
+                    "Here is the first example image. Follow the detection instructions and respond "
+                    "only with the required JSON array."
+                ),
+            },
+            {"type": "input_image", "detail": "auto", "image_url": first_image},
+        ]
+        messages.append({"role": "user", "content": first_content})
+        messages.append({"role": "assistant", "content": first_response})
+
+        for example_image, example_response in examples[1:]:
             messages.append(
                 {
                     "role": "user",
                     "content": [
-                        {
-                            "type": "input_text",
-                            "text": (
-                                f"Example {index}: apply the detection policy exactly and respond with "
-                                "the JSON format described previously."
-                            ),
-                        },
+                        {"type": "input_text", "text": "This is the next image."},
                         {"type": "input_image", "detail": "auto", "image_url": example_image},
                     ],
                 }
             )
             messages.append({"role": "assistant", "content": example_response})
 
-    content: List[Dict[str, Any]] = [{"type": "input_text", "text": prompt}]
-    if context_images:
-        for index, image_url in enumerate(context_images, 1):
-            content.append(
+        messages.append(
+            {
+                "role": "user",
+                "content": [
+                    {"type": "input_text", "text": "This is the next image."},
+                    {"type": "input_image", "detail": "auto", "image_url": image_data},
+                ],
+            }
+        )
+    else:
+        if context_images:
+            messages.append({"role": "user", "content": [{"type": "input_text", "text": prompt}]})
+            for index, image_url in enumerate(context_images, 1):
+                descriptor = (
+                    "Here is a reference image related to the instructions."
+                    if index == 1
+                    else "This is the next image."
+                )
+                messages.append(
+                    {
+                        "role": "user",
+                        "content": [
+                            {"type": "input_text", "text": descriptor},
+                            {"type": "input_image", "detail": "auto", "image_url": image_url},
+                        ],
+                    }
+                )
+            messages.append(
                 {
-                    "type": "input_image",
-                    "detail": "auto",
-                    "image_url": image_url,
+                    "role": "user",
+                    "content": [
+                        {"type": "input_text", "text": "This is the next image."},
+                        {"type": "input_image", "detail": "auto", "image_url": image_data},
+                    ],
                 }
             )
-
-    content.append(
-        {"type": "input_image", "detail": "auto", "image_url": image_data}
-    )
-
-    messages.append({"role": "user", "content": content})
+        else:
+            messages.append(
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "input_text", "text": prompt},
+                        {"type": "input_image", "detail": "auto", "image_url": image_data},
+                    ],
+                }
+            )
 
     return {
         "model": model,
