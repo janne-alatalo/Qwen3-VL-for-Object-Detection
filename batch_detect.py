@@ -19,6 +19,7 @@ from query_bbox import (
     build_payload,
     load_example_pairs,
     load_context_images,
+    format_debug_info,
 )
 
 DEFAULT_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".gif", ".webp"}
@@ -169,11 +170,13 @@ def detect_single_image(
         context_images=context_images,
     )
     body = request_completion(api_base, payload, timeout)
-    detections = list(extract_detections(body))
+    detections, raw_text, raw_body = extract_detections(body)
+    detections = list(detections)
     sanitized = sanitize_detections(detections)
     if detections and not sanitized:
         raise DetectionError(
             f"Image '{rel_path}' produced detections but none were usable."
+            + format_debug_info(raw_text, raw_body)
         )
     return rel_path, sanitized if sanitized else detections
 

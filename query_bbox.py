@@ -331,7 +331,7 @@ def request_completion(api_base: str, payload: Dict[str, Any], timeout: float) -
     return body
 
 
-def extract_detections(body: Dict[str, Any]) -> Sequence[Dict[str, Any]]:
+def extract_detections(body: Dict[str, Any]) -> Tuple[Sequence[Dict[str, Any]], str, Dict[str, Any]]:
     try:
         choices = body["choices"]
         if not choices:
@@ -368,7 +368,7 @@ def extract_detections(body: Dict[str, Any]) -> Sequence[Dict[str, Any]]:
     if not isinstance(detections, list):
         raise DetectionError("Model output is not a JSON array." + format_debug_info(raw_text, body))
 
-    return detections
+    return detections, raw_text, body
 
 
 def sanitize_detections(detections: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -498,11 +498,13 @@ def main() -> None:
     )
 
     body = request_completion(args.api_base, payload, args.timeout)
-    detections = list(extract_detections(body))
+    detections, raw_text, raw_body = extract_detections(body)
+    detections = list(detections)
     sanitized_detections = sanitize_detections(detections)
     if detections and not sanitized_detections:
         raise DetectionError(
             "Model returned detections but none were usable; review the warnings above."
+            + format_debug_info(raw_text, raw_body)
         )
 
     detections_to_draw = sanitized_detections if sanitized_detections else detections
