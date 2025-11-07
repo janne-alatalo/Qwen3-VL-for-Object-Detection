@@ -32,6 +32,28 @@ def warn(message: str) -> None:
     print(f"Warning: {message}", file=sys.stderr)
 
 
+def format_debug_info(raw_text: str, body: Dict[str, Any]) -> str:
+    usage = body.get("usage", {})
+    reasoning_tokens = None
+
+    if isinstance(usage, dict):
+        if "reasoning_tokens" in usage:
+            reasoning_tokens = usage["reasoning_tokens"]
+        elif isinstance(usage.get("completion_tokens_details"), dict):
+            reasoning_tokens = usage["completion_tokens_details"].get("reasoning_tokens")
+        elif isinstance(usage.get("output_tokens_details"), dict):
+            reasoning_tokens = usage["output_tokens_details"].get("reasoning_tokens")
+
+    usage_str = json.dumps(usage, ensure_ascii=False, default=str) if usage else "{}"
+    return (
+        "\n--- Model Response Debug ---\n"
+        f"{raw_text or '<empty response>'}\n"
+        "--- Usage ---\n"
+        f"{usage_str}\n"
+        f"Reasoning (CoT) tokens: {reasoning_tokens if reasoning_tokens is not None else 'unknown'}"
+    )
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Submit an image and prompt to a qwen3-VL model via an OpenAI-compatible API."
@@ -334,15 +356,17 @@ def extract_detections(body: Dict[str, Any]) -> Sequence[Dict[str, Any]]:
 
     raw_text = extract_text_content(raw_content)
     if not raw_text.strip():
-        raise DetectionError("Model produced an empty response.")
+        raise DetectionError("Model produced an empty response." + format_debug_info(raw_text, body))
 
     try:
         detections = parse_detection_json(raw_text)
     except (ValueError, TypeError) as exc:
-        raise DetectionError(f"Failed to parse model output as JSON: {exc}") from exc
+        raise DetectionError(
+            f"Failed to parse model output as JSON: {exc}" + format_debug_info(raw_text, body)
+        ) from exc
 
     if not isinstance(detections, list):
-        raise DetectionError("Model output is not a JSON array.")
+        raise DetectionError("Model output is not a JSON array." + format_debug_info(raw_text, body))
 
     return detections
 
