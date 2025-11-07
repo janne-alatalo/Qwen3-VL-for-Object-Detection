@@ -18,6 +18,7 @@ SYSTEM_PROMPT = (
     '`"bbox_2d"` and `"label"`. `"bbox_2d"` must be a list of four integers '
     "representing x1, y1, x2, y2 coordinates within [0, 1000]. "
     "Do not include any explanations, code fences, or additional text—return the raw JSON only."
+    "Example output: [{ \"bbox_2d\": [410, 0, 495, 999], \"label\": \"cat\" }]"
 )
 
 
