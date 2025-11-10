@@ -533,7 +533,7 @@ def evaluate(args: argparse.Namespace) -> None:
         for (gt_key, pred_key), count in label_confusions.most_common():
             gt = registry.display_name(gt_key)
             pred = registry.display_name(pred_key)
-            print(f"{gt} -> {pred}: {count}")
+            print(f"Actual {gt} predicted as {pred}: {count}")
 
 
 def main() -> None:
