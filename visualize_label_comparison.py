@@ -9,9 +9,9 @@ from json import JSONDecodeError
 from pathlib import Path, PurePosixPath
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
-from query_bbox import render_bounding_boxes, sanitize_detections
+from query_bbox import get_label_font, render_bounding_boxes, sanitize_detections
 
 
 def parse_args() -> argparse.Namespace:
@@ -226,7 +226,7 @@ def load_results(results_path: Path) -> Dict[str, List[Dict[str, Any]]]:
 def draw_ground_truth(image: Image.Image, boxes: Sequence[Dict[str, Any]]) -> Image.Image:
     output = image.copy()
     draw = ImageDraw.Draw(output)
-    font = ImageFont.load_default()
+    font = get_label_font(18)
     for box in boxes:
         x1, y1, x2, y2 = box["bbox"]
         label = box.get("label", "")

@@ -9,6 +9,8 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 import requests
+from functools import lru_cache
+
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -275,7 +277,7 @@ def render_bounding_boxes(
 ) -> Image.Image:
     output = image.copy()
     draw = ImageDraw.Draw(output)
-    font = ImageFont.load_default()
+    font = get_label_font(18)
     width, height = output.size
 
     for detection in detections:
@@ -536,3 +538,10 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("Interrupted by user.", file=sys.stderr)
         sys.exit(130)
+@lru_cache(maxsize=None)
+def get_label_font(size: int = 16) -> ImageFont.ImageFont:
+    """Load a readable font once, falling back to the default bitmap font."""
+    try:
+        return ImageFont.truetype("DejaVuSans.ttf", size=size)
+    except OSError:
+        return ImageFont.load_default()
