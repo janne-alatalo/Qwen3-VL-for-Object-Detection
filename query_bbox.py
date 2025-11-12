@@ -435,7 +435,7 @@ def sanitize_detections(detections: Sequence[Dict[str, Any]]) -> List[Dict[str, 
         cleaned.append(entry)
 
     if not cleaned and detections:
-        warn("All detections from the model were discarded due to formatting issues.")
+        warn(f"All detections from the model were discarded due to formatting issues. Original output:\n{json.dumps(detections, indent=2)}")
 
     return cleaned
 
