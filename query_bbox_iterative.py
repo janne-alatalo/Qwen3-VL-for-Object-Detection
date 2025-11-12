@@ -209,7 +209,7 @@ def build_refinement_messages(
                 {"type": "input_image", "detail": "auto", "image_url": original_image_data},
             ],
         },
-        {"role": "assistant", "content": [{"type": "output_text", "text": previous_json}]},
+        {"role": "assistant", "content": [{"type": "text", "text": previous_json}]},
         {
             "role": "user",
             "content": [
