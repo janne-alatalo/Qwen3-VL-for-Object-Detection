@@ -419,7 +419,20 @@ def sanitize_detections(detections: Sequence[Dict[str, Any]]) -> List[Dict[str, 
             label = str(label)
             warn(f"Coercing non-string label on detection #{index} to string.")
 
-        cleaned.append({"bbox_2d": bbox_ints, "label": label})
+        det_id: Optional[int] = None
+        if "id" in detection:
+            raw_id = detection["id"]
+            try:
+                det_id = int(raw_id)
+            except (TypeError, ValueError):
+                warn(f"Ignoring non-integer id on detection #{index}: {raw_id}")
+                det_id = None
+
+        entry = {"bbox_2d": bbox_ints, "label": label}
+        if det_id is not None:
+            entry["id"] = det_id
+
+        cleaned.append(entry)
 
     if not cleaned and detections:
         warn("All detections from the model were discarded due to formatting issues.")
