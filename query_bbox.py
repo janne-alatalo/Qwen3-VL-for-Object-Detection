@@ -4,6 +4,7 @@ import base64
 import json
 import mimetypes
 import sys
+import time
 from json import JSONDecodeError
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
@@ -80,6 +81,36 @@ def parse_args() -> argparse.Namespace:
         help="Sampling temperature; defaults to 0 for deterministic outputs.",
     )
     parser.add_argument(
+        "--top-p",
+        type=float,
+        default=0.95,
+        help="Top-p nucleus sampling value (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--top-k",
+        type=int,
+        default=20,
+        help="Top-k sampling value (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--repetition-penalty",
+        type=float,
+        default=1.0,
+        help="Repetition penalty applied during decoding (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--presence-penalty",
+        type=float,
+        default=0.0,
+        help="Presence penalty applied during decoding (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=1,
+        help="Random seed for sampling (default: %(default)s).",
+    )
+    parser.add_argument(
         "--max-tokens",
         type=int,
         default=10000,
@@ -135,6 +166,11 @@ def build_payload(
     model: str,
     temperature: float,
     max_tokens: int,
+    top_p: float,
+    top_k: int,
+    repetition_penalty: float,
+    presence_penalty: float,
+    seed: int,
     examples: Optional[Sequence[Tuple[str, str]]] = None,
     context_images: Optional[Sequence[str]] = None,
 ) -> Dict[str, Any]:
@@ -219,6 +255,11 @@ def build_payload(
         "model": model,
         "messages": messages,
         "temperature": temperature,
+        "repetition_penalty": repetition_penalty,
+        "presence_penalty": presence_penalty,
+        "top_p": top_p,
+        "top_k": top_k,
+        "seed": seed,
         "max_tokens": max_tokens,
     }
 
@@ -274,7 +315,7 @@ def render_bounding_boxes(
 ) -> Image.Image:
     output = image.copy()
     draw = ImageDraw.Draw(output)
-    font = get_label_font(18)
+    font = get_label_font(50)
     width, height = output.size
 
     for detection in detections:
@@ -291,7 +332,7 @@ def render_bounding_boxes(
         draw.rectangle([x1, y1, x2, y2], outline="red", width=3)
         if label:
             text_pos = (x1, max(0, y1 - 12))
-            draw.text(text_pos, label, fill="red", font=font)
+            #draw.text(text_pos, label, fill="red", font=font)
 
     return output
 
@@ -340,11 +381,45 @@ def extract_detections(body: Dict[str, Any]) -> Tuple[Sequence[Dict[str, Any]], 
         raise DetectionError("Model response did not include any choices.")
 
     choice = choices[0]
+    message_block = choice.get("message") if isinstance(choice, dict) else {}
+    partial_text = ""
+    cot_output = ""
+    if isinstance(message_block, dict):
+        try:
+            partial_text = extract_text_content(message_block.get("content", "")) or ""
+        except Exception:
+            partial_text = str(message_block.get("content", ""))
+        rc = message_block.get("reasoning_content")
+        if rc:
+            if isinstance(rc, str):
+                cot_output = rc
+            else:
+                try:
+                    cot_output = "".join(rc)
+                except Exception:
+                    cot_output = str(rc)
+
     finish_reason = choice.get("finish_reason")
     if finish_reason == "length":
+        usage = body.get("usage")
+        usage_str = ""
+        if usage:
+            try:
+                usage_str = json.dumps(usage, ensure_ascii=False)
+            except TypeError:
+                usage_str = str(usage)
+
+        details: List[str] = [
+            "Generation stopped because it reached the max token limit. Increase --max-tokens or reduce the prompt length."
+        ]
+        if usage_str:
+            details.append(f"Usage: {usage_str}")
+        if partial_text.strip():
+            details.append(f"Partial assistant content:\n{partial_text.strip()}")
+        if cot_output.strip():
+            details.append(f"CoT output:\n{cot_output.strip()}")
         raise DetectionError(
-            "Generation stopped because it reached the max token limit. "
-            "Increase --max-tokens or reduce the prompt length."
+            "\n".join(details)
         )
     if finish_reason and finish_reason not in ("stop", None):
         warn(f"Model finish_reason: {finish_reason}")
@@ -479,6 +554,21 @@ def resolve_save_path(requested: Path, source_image: Path, suffix: str) -> Path:
     return requested / f"{source_image.stem}{suffix}{extension}"
 
 
+def print_generation_info(raw_body: Dict[str, Any], elapsed_seconds: float) -> None:
+    usage = raw_body.get("usage")
+    print("\n--- Generation Info ---")
+    print(f"Request duration: {elapsed_seconds:.2f}s")
+    if usage:
+        try:
+            usage_str = json.dumps(usage, indent=2)
+        except TypeError:
+            usage_str = str(usage)
+        print("Usage:")
+        print(usage_str)
+    else:
+        print("Usage: not provided by server.")
+
+
 def show_image(image: Image.Image, title: str) -> None:
     try:
         image.show(title=title)
@@ -506,11 +596,18 @@ def main() -> None:
         args.model,
         args.temperature,
         args.max_tokens,
+        args.top_p,
+        args.top_k,
+        args.repetition_penalty,
+        args.presence_penalty,
+        args.seed,
         examples=examples,
         context_images=context_images,
     )
 
+    start_time = time.perf_counter()
     body = request_completion(args.api_base, payload, args.timeout)
+    elapsed = time.perf_counter() - start_time
     detections, raw_text, raw_body = extract_detections(body)
     detections = list(detections)
     sanitized_detections = sanitize_detections(detections)
@@ -533,6 +630,7 @@ def main() -> None:
         annotated_image.save(save_target)
         print(f"Saved annotated image to: {save_target}")
 
+    print_generation_info(raw_body, elapsed)
     show_image(annotated_image, title=f"{args.image_path.name} detections")
 
 @lru_cache(maxsize=None)
