@@ -31,6 +31,14 @@ REQUEST_TIMEOUT_DEFAULT = 120.0
 class DetectionError(Exception):
     """Raised when the model call fails or returns unusable data."""
 
+    def __init__(
+        self,
+        message: str,
+        generation_details: Optional[Dict[str, Any]] = None,
+    ) -> None:
+        super().__init__(message)
+        self.generation_details = generation_details
+
 
 def warn(message: str) -> None:
     print(f"Warning: {message}", file=sys.stderr)
@@ -126,6 +134,14 @@ def parse_args() -> argparse.Namespace:
         "--save-path",
         type=Path,
         help="Optional path to save the annotated image. Treats directories as output folders.",
+    )
+    parser.add_argument(
+        "--save-generation-details",
+        type=Path,
+        help=(
+            "Optional path to save generation metadata, detections, and CoT reasoning as JSON. "
+            "If omitted, details are not persisted."
+        ),
     )
     parser.add_argument(
         "--example",
@@ -372,7 +388,7 @@ def request_completion(api_base: str, payload: Dict[str, Any], timeout: float) -
     return body
 
 
-def extract_detections(body: Dict[str, Any]) -> Tuple[Sequence[Dict[str, Any]], str, Dict[str, Any]]:
+def extract_detections(body: Dict[str, Any]) -> Tuple[Sequence[Dict[str, Any]], str, Dict[str, Any], Dict[str, Any]]:
     try:
         choices = body["choices"]
         if not choices:
@@ -412,14 +428,25 @@ def extract_detections(body: Dict[str, Any]) -> Tuple[Sequence[Dict[str, Any]], 
         details: List[str] = [
             "Generation stopped because it reached the max token limit. Increase --max-tokens or reduce the prompt length."
         ]
+        partial_text_stripped = partial_text.strip()
+        cot_output_stripped = cot_output.strip()
         if usage_str:
             details.append(f"Usage: {usage_str}")
-        if partial_text.strip():
-            details.append(f"Partial assistant content:\n{partial_text.strip()}")
-        if cot_output.strip():
-            details.append(f"CoT output:\n{cot_output.strip()}")
+        if partial_text_stripped:
+            details.append(f"Partial assistant content:\n{partial_text_stripped}")
+        if cot_output_stripped:
+            details.append(f"CoT output:\n{cot_output_stripped}")
+
+        generation_details = {
+            "response": body,
+            "assistant_text": partial_text,
+            "cot_text": cot_output,
+            "detections": [],
+        }
+
         raise DetectionError(
-            "\n".join(details)
+            "\n".join(details),
+            generation_details=generation_details,
         )
     if finish_reason and finish_reason not in ("stop", None):
         warn(f"Model finish_reason: {finish_reason}")
@@ -443,7 +470,12 @@ def extract_detections(body: Dict[str, Any]) -> Tuple[Sequence[Dict[str, Any]], 
     if not isinstance(detections, list):
         raise DetectionError("Model output is not a JSON array." + format_debug_info(raw_text, body))
 
-    return detections, raw_text, body
+    metadata = {
+        "finish_reason": finish_reason,
+        "cot_output": cot_output,
+    }
+
+    return detections, raw_text, body, metadata
 
 
 def sanitize_detections(detections: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -569,6 +601,42 @@ def print_generation_info(raw_body: Dict[str, Any], elapsed_seconds: float) -> N
         print("Usage: not provided by server.")
 
 
+def save_generation_details(
+    target: Path,
+    *,
+    response: Dict[str, Any],
+    assistant_text: str,
+    cot_text: Optional[str],
+    detections: Sequence[Dict[str, Any]],
+    elapsed_seconds: float,
+) -> None:
+    finish_reason = None
+    choices = response.get("choices")
+    if isinstance(choices, list) and choices:
+        first_choice = choices[0]
+        if isinstance(first_choice, dict):
+            finish_reason = first_choice.get("finish_reason")
+
+    payload = {
+        "model": response.get("model"),
+        "created_at": response.get("created") or response.get("created_at"),
+        "finish_reason": finish_reason,
+        "usage": response.get("usage"),
+        "elapsed_seconds": elapsed_seconds,
+        "assistant_text": assistant_text,
+        "cot_text": cot_text or None,
+        "detections": detections,
+        "response": response,
+    }
+    try:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with target.open("w", encoding="utf-8") as handle:
+            json.dump(payload, handle, ensure_ascii=False, indent=2)
+        print(f"Saved generation details to: {target}")
+    except OSError as exc:
+        warn(f"Failed to save generation details to {target}: {exc}")
+
+
 def show_image(image: Image.Image, title: str) -> None:
     try:
         image.show(title=title)
@@ -608,7 +676,22 @@ def main() -> None:
     start_time = time.perf_counter()
     body = request_completion(args.api_base, payload, args.timeout)
     elapsed = time.perf_counter() - start_time
-    detections, raw_text, raw_body = extract_detections(body)
+
+    try:
+        detections, raw_text, raw_body, generation_metadata = extract_detections(body)
+    except DetectionError as exc:
+        if args.save_generation_details is not None:
+            details_payload = getattr(exc, "generation_details", None)
+            if details_payload:
+                save_generation_details(
+                    args.save_generation_details,
+                    response=details_payload.get("response", body),
+                    assistant_text=details_payload.get("assistant_text", ""),
+                    cot_text=details_payload.get("cot_text"),
+                    detections=details_payload.get("detections", []),
+                    elapsed_seconds=elapsed,
+                )
+        raise
     detections = list(detections)
     sanitized_detections = sanitize_detections(detections)
     if detections and not sanitized_detections:
@@ -629,6 +712,16 @@ def main() -> None:
         save_target.parent.mkdir(parents=True, exist_ok=True)
         annotated_image.save(save_target)
         print(f"Saved annotated image to: {save_target}")
+
+    if args.save_generation_details is not None:
+        save_generation_details(
+            args.save_generation_details,
+            response=raw_body,
+            assistant_text=raw_text,
+            cot_text=generation_metadata.get("cot_output"),
+            detections=detections_to_draw,
+            elapsed_seconds=elapsed,
+        )
 
     print_generation_info(raw_body, elapsed)
     show_image(annotated_image, title=f"{args.image_path.name} detections")
