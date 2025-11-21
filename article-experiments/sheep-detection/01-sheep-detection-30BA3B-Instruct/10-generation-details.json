@@ -1,0 +1,422 @@
+{
+  "model": "qwen-vl",
+  "created_at": 1763716710,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1347,
+    "total_tokens": 2781,
+    "completion_tokens": 1434,
+    "prompt_tokens_details": null
+  },
+  "elapsed_seconds": 10.441122632997576,
+  "assistant_text": "```json\n[\n\t{\"bbox_2d\": [0, 465, 167, 658], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [153, 490, 482, 948], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [473, 483, 919, 960], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [623, 466, 991, 862], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [705, 423, 812, 551], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [767, 357, 883, 487], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [867, 305, 957, 391], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [937, 171, 1000, 264], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [852, 143, 905, 224], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [802, 210, 864, 288], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [744, 168, 803, 246], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [705, 160, 758, 233], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [655, 158, 701, 216], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [616, 173, 671, 231], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [595, 215, 675, 292], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [518, 258, 595, 337], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [453, 230, 533, 301], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [462, 292, 533, 377], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [423, 434, 538, 561], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [412, 358, 500, 458], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [331, 360, 434, 571], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [273, 342, 343, 444], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [215, 378, 329, 567], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [137, 342, 214, 456], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [65, 381, 182, 531], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [312, 286, 373, 363], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [358, 303, 426, 381], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [438, 320, 475, 355], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [508, 317, 545, 351], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [552, 316, 629, 405], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [621, 346, 685, 433], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [638, 300, 718, 355], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [641, 388, 727, 478], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [708, 317, 791, 393], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [827, 56, 889, 113], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [847, 112, 874, 142], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [811, 132, 836, 167], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [780, 112, 812, 148], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [825, 22, 859, 57], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [887, 41, 927, 84], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [923, 97, 974, 157], \"label\": \"sheep heads\"}\n]\n```",
+  "cot_text": null,
+  "detections": [
+    {
+      "bbox_2d": [
+        0,
+        465,
+        167,
+        658
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        153,
+        490,
+        482,
+        948
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        473,
+        483,
+        919,
+        960
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        623,
+        466,
+        991,
+        862
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        705,
+        423,
+        812,
+        551
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        767,
+        357,
+        883,
+        487
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        867,
+        305,
+        957,
+        391
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        937,
+        171,
+        1000,
+        264
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        852,
+        143,
+        905,
+        224
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        802,
+        210,
+        864,
+        288
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        744,
+        168,
+        803,
+        246
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        705,
+        160,
+        758,
+        233
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        655,
+        158,
+        701,
+        216
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        616,
+        173,
+        671,
+        231
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        595,
+        215,
+        675,
+        292
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        518,
+        258,
+        595,
+        337
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        453,
+        230,
+        533,
+        301
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        462,
+        292,
+        533,
+        377
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        423,
+        434,
+        538,
+        561
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        412,
+        358,
+        500,
+        458
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        331,
+        360,
+        434,
+        571
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        273,
+        342,
+        343,
+        444
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        215,
+        378,
+        329,
+        567
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        137,
+        342,
+        214,
+        456
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        65,
+        381,
+        182,
+        531
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        312,
+        286,
+        373,
+        363
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        358,
+        303,
+        426,
+        381
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        438,
+        320,
+        475,
+        355
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        508,
+        317,
+        545,
+        351
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        552,
+        316,
+        629,
+        405
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        621,
+        346,
+        685,
+        433
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        638,
+        300,
+        718,
+        355
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        641,
+        388,
+        727,
+        478
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        708,
+        317,
+        791,
+        393
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        827,
+        56,
+        889,
+        113
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        847,
+        112,
+        874,
+        142
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        811,
+        132,
+        836,
+        167
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        780,
+        112,
+        812,
+        148
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        825,
+        22,
+        859,
+        57
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        887,
+        41,
+        927,
+        84
+      ],
+      "label": "sheep heads"
+    },
+    {
+      "bbox_2d": [
+        923,
+        97,
+        974,
+        157
+      ],
+      "label": "sheep heads"
+    }
+  ],
+  "response": {
+    "id": "chatcmpl-165835d0b122415893e8d7ac258d09e4",
+    "object": "chat.completion",
+    "created": 1763716710,
+    "model": "qwen-vl",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```json\n[\n\t{\"bbox_2d\": [0, 465, 167, 658], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [153, 490, 482, 948], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [473, 483, 919, 960], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [623, 466, 991, 862], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [705, 423, 812, 551], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [767, 357, 883, 487], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [867, 305, 957, 391], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [937, 171, 1000, 264], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [852, 143, 905, 224], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [802, 210, 864, 288], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [744, 168, 803, 246], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [705, 160, 758, 233], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [655, 158, 701, 216], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [616, 173, 671, 231], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [595, 215, 675, 292], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [518, 258, 595, 337], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [453, 230, 533, 301], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [462, 292, 533, 377], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [423, 434, 538, 561], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [412, 358, 500, 458], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [331, 360, 434, 571], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [273, 342, 343, 444], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [215, 378, 329, 567], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [137, 342, 214, 456], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [65, 381, 182, 531], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [312, 286, 373, 363], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [358, 303, 426, 381], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [438, 320, 475, 355], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [508, 317, 545, 351], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [552, 316, 629, 405], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [621, 346, 685, 433], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [638, 300, 718, 355], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [641, 388, 727, 478], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [708, 317, 791, 393], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [827, 56, 889, 113], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [847, 112, 874, 142], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [811, 132, 836, 167], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [780, 112, 812, 148], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [825, 22, 859, 57], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [887, 41, 927, 84], \"label\": \"sheep heads\"},\n\t{\"bbox_2d\": [923, 97, 974, 157], \"label\": \"sheep heads\"}\n]\n```",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning_content": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 1347,
+      "total_tokens": 2781,
+      "completion_tokens": 1434,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

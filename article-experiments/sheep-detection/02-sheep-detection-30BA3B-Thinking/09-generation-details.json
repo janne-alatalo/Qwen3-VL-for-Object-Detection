@@ -1,0 +1,449 @@
+{
+  "model": "qwen-vl",
+  "created_at": 1763714367,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1350,
+    "total_tokens": 8638,
+    "completion_tokens": 7288,
+    "prompt_tokens_details": null
+  },
+  "elapsed_seconds": 51.979005392990075,
+  "assistant_text": "\n\n[\n  {\"bbox_2d\": [0, 467, 50, 572], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [66, 377, 147, 477], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [147, 341, 197, 425], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [192, 320, 250, 397], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [277, 336, 330, 435], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [214, 371, 295, 467], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [311, 286, 357, 357], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [307, 352, 361, 432], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [329, 355, 392, 442], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [416, 345, 499, 458], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [425, 432, 536, 567], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [457, 290, 527, 371], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [464, 229, 519, 296], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [509, 400, 597, 490], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [521, 256, 593, 341], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [524, 486, 612, 612], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [559, 307, 630, 405], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [600, 207, 672, 296], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [612, 336, 680, 427], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [624, 465, 708, 585], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [643, 384, 725, 475], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [659, 200, 715, 267], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [684, 157, 730, 213], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [697, 213, 757, 276], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [701, 420, 805, 548], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [714, 310, 786, 391], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [753, 165, 801, 242], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [784, 350, 877, 482], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [794, 209, 859, 283], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [803, 113, 851, 173], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [847, 142, 906, 223], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [853, 297, 952, 395], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [897, 147, 954, 223], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [939, 170, 999, 262], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [939, 97, 982, 170], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [983, 154, 999, 223], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [978, 25, 999, 70], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [923, 1, 957, 45], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [887, 34, 934, 80], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [847, 55, 897, 115], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [826, 19, 865, 63], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [794, 115, 823, 157], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [740, 142, 775, 179], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [643, 157, 687, 200], \"label\": \"sheep head\"}\n]",
+  "cot_text": "Got it, let's count all the sheep heads in the image. First, I need to identify each sheep's head. Let's go step by step.\n\nStarting from the left:\n\n1. The sheep on the far left, its head is visible. [0, 467, 50, 572]\n2. Next, the sheep with the yellow tag on the left side. [66, 377, 147, 477]\n3. Then the sheep behind that one: [147, 341, 197, 425]\n4. Next, the sheep with the yellow tag: [192, 320, 250, 397]\n5. Then the sheep behind that, maybe: [277, 336, 330, 435]\n6. The sheep with the black face: [214, 371, 295, 467]\n7. The sheep with the yellow tag: [311, 286, 357, 357]\n8. The sheep behind that: [307, 352, 361, 432]\n9. The sheep with the yellow tag: [329, 355, 392, 442]\n10. The sheep with the black face: [416, 345, 499, 458]\n11. The sheep with the yellow tag: [425, 432, 536, 567]\n12. The sheep with the yellow tag: [457, 290, 527, 371]\n13. The sheep with the yellow tag: [464, 229, 519, 296]\n14. The sheep with the yellow tag: [509, 400, 597, 490]\n15. The sheep with the yellow tag: [521, 256, 593, 341]\n16. The sheep with the yellow tag: [524, 486, 612, 612]\n17. The sheep with the yellow tag: [559, 307, 630, 405]\n18. The sheep with the yellow tag: [600, 207, 672, 296]\n19. The sheep with the yellow tag: [612, 336, 680, 427]\n20. The sheep with the yellow tag: [624, 465, 708, 585]\n21. The sheep with the yellow tag: [643, 384, 725, 475]\n22. The sheep with the yellow tag: [659, 200, 715, 267]\n23. The sheep with the yellow tag: [684, 157, 730, 213]\n24. The sheep with the yellow tag: [697, 213, 757, 276]\n25. The sheep with the yellow tag: [701, 420, 805, 548]\n26. The sheep with the yellow tag: [714, 310, 786, 391]\n27. The sheep with the yellow tag: [753, 165, 801, 242]\n28. The sheep with the yellow tag: [784, 350, 877, 482]\n29. The sheep with the yellow tag: [794, 209, 859, 283]\n30. The sheep with the yellow tag: [803, 113, 851, 173]\n31. The sheep with the yellow tag: [847, 142, 906, 223]\n32. The sheep with the yellow tag: [853, 297, 952, 395]\n33. The sheep with the yellow tag: [897, 147, 954, 223]\n34. The sheep with the yellow tag: [939, 170, 999, 262]\n35. The sheep with the yellow tag: [939, 97, 982, 170]\n36. The sheep with the yellow tag: [983, 154, 999, 223]\n37. The sheep with the yellow tag: [978, 25, 999, 70]\n38. The sheep with the yellow tag: [923, 1, 957, 45]\n39. The sheep with the yellow tag: [887, 34, 934, 80]\n40. The sheep with the yellow tag: [847, 55, 897, 115]\n41. The sheep with the yellow tag: [826, 19, 865, 63]\n42. The sheep with the yellow tag: [794, 115, 823, 157]\n43. The sheep with the yellow tag: [740, 142, 775, 179]\n44. The sheep with the yellow tag: [643, 157, 687, 200]\n\nWait, maybe I missed some. Let's check again. Let's list all the sheep heads:\n\n- Leftmost sheep: [0, 467, 50, 572]\n- Next: [66, 377, 147, 477]\n- [147, 341, 197, 425]\n- [192, 320, 250, 397]\n- [277, 336, 330, 435]\n- [214, 371, 295, 467]\n- [311, 286, 357, 357]\n- [307, 352, 361, 432]\n- [329, 355, 392, 442]\n- [416, 345, 499, 458]\n- [425, 432, 536, 567]\n- [457, 290, 527, 371]\n- [464, 229, 519, 296]\n- [509, 400, 597, 490]\n- [521, 256, 593, 341]\n- [524, 486, 612, 612]\n- [559, 307, 630, 405]\n- [600, 207, 672, 296]\n- [612, 336, 680, 427]\n- [624, 465, 708, 585]\n- [643, 384, 725, 475]\n- [659, 200, 715, 267]\n- [684, 157, 730, 213]\n- [697, 213, 757, 276]\n- [701, 420, 805, 548]\n- [714, 310, 786, 391]\n- [753, 165, 801, 242]\n- [784, 350, 877, 482]\n- [794, 209, 859, 283]\n- [803, 113, 851, 173]\n- [847, 142, 906, 223]\n- [853, 297, 952, 395]\n- [897, 147, 954, 223]\n- [939, 170, 999, 262]\n- [939, 97, 982, 170]\n- [983, 154, 999, 223]\n- [978, 25, 999, 70]\n- [923, 1, 957, 45]\n- [887, 34, 934, 80]\n- [847, 55, 897, 115]\n- [826, 19, 865, 63]\n- [794, 115, 823, 157]\n- [740, 142, 775, 179]\n- [643, 157, 687, 200]\n\nWait, maybe some of these are overlapping or I counted wrong. Let's count how many sheep there are. The image has a large flock. Let's try to count the heads:\n\nLooking at the image, the sheep are in a dense group. Let's list each head:\n\n1. [0, 467, 50, 572] - leftmost\n2. [66, 377, 147, 477]\n3. [147, 341, 197, 425]\n4. [192, 320, 250, 397]\n5. [277, 336, 330, 435]\n6. [214, 371, 295, 467]\n7. [311, 286, 357, 357]\n8. [307, 352, 361, 432]\n9. [329, 355, 392, 442]\n10. [416, 345, 499, 458]\n11. [425, 432, 536, 567]\n12. [457, 290, 527, 371]\n13. [464, 229, 519, 296]\n14. [509, 400, 597, 490]\n15. [521, 256, 593, 341]\n16. [524, 486, 612, 612]\n17. [559, 307, 630, 405]\n18. [600, 207, 672, 296]\n19. [612, 336, 680, 427]\n20. [624, 465, 708, 585]\n21. [643, 384, 725, 475]\n22. [659, 200, 715, 267]\n23. [684, 157, 730, 213]\n24. [697, 213, 757, 276]\n25. [701, 420, 805, 548]\n26. [714, 310, 786, 391]\n27. [753, 165, 801, 242]\n28. [784, 350, 877, 482]\n29. [794, 209, 859, 283]\n30. [803, 113, 851, 173]\n31. [847, 142, 906, 223]\n32. [853, 297, 952, 395]\n33. [897, 147, 954, 223]\n34. [939, 170, 999, 262]\n35. [939, 97, 982, 170]\n36. [983, 154, 999, 223]\n37. [978, 25, 999, 70]\n38. [923, 1, 957, 45]\n39. [887, 34, 934, 80]\n40. [847, 55, 897, 115]\n41. [826, 19, 865, 63]\n42. [794, 115, 823, 157]\n43. [740, 142, 775, 179]\n44. [643, 157, 687, 200]\n\nWait, maybe some of these are not distinct. Let's check the image again. The key is to find all sheep heads. Let's count the number of sheep. The image shows a large flock. Let's see:\n\nIn the foreground, there are several sheep. Let's count:\n\n- Left side: 1 sheep (leftmost)\n- Next row: maybe 2-3\n- Middle: many\n\nAlternatively, maybe the correct approach is to list each head with their coordinates.\n\nWait, the task is to detect all sheep heads. So each sheep's head is a bounding box.\n\nLet's go through the image systematically:\n\n1. Top left: the sheep on the far left, head is visible. [0, 467, 50, 572]\n2. Next to it: [66, 377, 147, 477]\n3. Next: [147, 341, 197, 425]\n4. Next: [192, 320, 250, 397]\n5. Behind that: [277, 336, 330, 435]\n6. The sheep with the black face: [214, 371, 295, 467]\n7. Next: [311, 286, 357, 357]\n8. Next: [307, 352, 361, 432]\n9. Next: [329, 355, 392, 442]\n10. The sheep with the black face: [416, 345, 499, 458]\n11. Next: [425, 432, 536, 567]\n12. Next: [457, 290, 527, 371]\n13. Next: [464, 229, 519, 296]\n14. Next: [509, 400, 597, 490]\n15. Next: [521, 256, 593, 341]\n16. Next: [524, 486, 612, 612]\n17. Next: [559, 307, 630, 405]\n18. Next: [600, 207, 672, 296]\n19. Next: [612, 336, 680, 427]\n20. Next: [624, 465, 708, 585]\n21. Next: [643, 384, 725, 475]\n22. Next: [659, 200, 715, 267]\n23. Next: [684, 157, 730, 213]\n24. Next: [697, 213, 757, 276]\n25. Next: [701, 420, 805, 548]\n26. Next: [714, 310, 786, 391]\n27. Next: [753, 165, 801, 242]\n28. Next: [784, 350, 877, 482]\n29. Next: [794, 209, 859, 283]\n30. Next: [803, 113, 851, 173]\n31. Next: [847, 142, 906, 223]\n32. Next: [853, 297, 952, 395]\n33. Next: [897, 147, 954, 223]\n34. Next: [939, 170, 999, 262]\n35. Next: [939, 97, 982, 170]\n36. Next: [983, 154, 999, 223]\n37. Next: [978, 25, 999, 70]\n38. Next: [923, 1, 957, 45]\n39. Next: [887, 34, 934, 80]\n40. Next: [847, 55, 897, 115]\n41. Next: [826, 19, 865, 63]\n42. Next: [794, 115, 823, 157]\n43. Next: [740, 142, 775, 179]\n44. Next: [643, 157, 687, 200]\n\nWait, but some of these might be overlapping or not distinct. Let's check a few:\n\n- The sheep with the black face in the middle: [416, 345, 499, 458] is correct.\n- The sheep with the yellow tag on the left: [0, 467, 50, 572] is a sheep head.\n\nI think this is a lot, but the task is to list all. Let's verify with the image.\n\nAlternatively, maybe there's a better way. Let's count the number of sheep heads.\n\nLooking at the image, the number of sheep heads is substantial. Let's see:\n\n- In the foreground, there are about 10-15 sheep.\n- In the middle, more.\n- In the background, many.\n\nBut since the task is to detect all, we need to list each.\n\nAfter careful counting, the correct bounding boxes for all sheep heads are as follows:\n\n[0, 467, 50, 572], [66, 377, 147, 477], [147, 341, 197, 425], [192, 320, 250, 397], [277, 336, 330, 435], [214, 371, 295, 467], [311, 286, 357, 357], [307, 352, 361, 432], [329, 355, 392, 442], [416, 345, 499, 458], [425, 432, 536, 567], [457, 290, 527, 371], [464, 229, 519, 296], [509, 400, 597, 490], [521, 256, 593, 341], [524, 486, 612, 612], [559, 307, 630, 405], [600, 207, 672, 296], [612, 336, 680, 427], [624, 465, 708, 585], [643, 384, 725, 475], [659, 200, 715, 267], [684, 157, 730, 213], [697, 213, 757, 276], [701, 420, 805, 548], [714, 310, 786, 391], [753, 165, 801, 242], [784, 350, 877, 482], [794, 209, 859, 283], [803, 113, 851, 173], [847, 142, 906, 223], [853, 297, 952, 395], [897, 147, 954, 223], [939, 170, 999, 262], [939, 97, 982, 170], [983, 154, 999, 223], [978, 25, 999, 70], [923, 1, 957, 45], [887, 34, 934, 80], [847, 55, 897, 115], [826, 19, 865, 63], [794, 115, 823, 157], [740, 142, 775, 179], [643, 157, 687, 200]\n\nWait, but some of these might be duplicates or not correct. Let's check a few:\n\n- The sheep on the far left: [0, 467, 50, 572] is correct.\n- The sheep with the black face in the middle: [416, 345, 499, 458] is correct.\n- The sheep with the yellow tag on the left side: [66, 377, 147, 477] is correct.\n\nI think this is the right approach. Now, let's format this as JSON.\n",
+  "detections": [
+    {
+      "bbox_2d": [
+        0,
+        467,
+        50,
+        572
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        66,
+        377,
+        147,
+        477
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        147,
+        341,
+        197,
+        425
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        192,
+        320,
+        250,
+        397
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        277,
+        336,
+        330,
+        435
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        214,
+        371,
+        295,
+        467
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        311,
+        286,
+        357,
+        357
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        307,
+        352,
+        361,
+        432
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        329,
+        355,
+        392,
+        442
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        416,
+        345,
+        499,
+        458
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        425,
+        432,
+        536,
+        567
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        457,
+        290,
+        527,
+        371
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        464,
+        229,
+        519,
+        296
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        509,
+        400,
+        597,
+        490
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        521,
+        256,
+        593,
+        341
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        524,
+        486,
+        612,
+        612
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        559,
+        307,
+        630,
+        405
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        600,
+        207,
+        672,
+        296
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        612,
+        336,
+        680,
+        427
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        624,
+        465,
+        708,
+        585
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        643,
+        384,
+        725,
+        475
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        659,
+        200,
+        715,
+        267
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        684,
+        157,
+        730,
+        213
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        697,
+        213,
+        757,
+        276
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        701,
+        420,
+        805,
+        548
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        714,
+        310,
+        786,
+        391
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        753,
+        165,
+        801,
+        242
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        784,
+        350,
+        877,
+        482
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        794,
+        209,
+        859,
+        283
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        803,
+        113,
+        851,
+        173
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        847,
+        142,
+        906,
+        223
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        853,
+        297,
+        952,
+        395
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        897,
+        147,
+        954,
+        223
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        939,
+        170,
+        999,
+        262
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        939,
+        97,
+        982,
+        170
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        983,
+        154,
+        999,
+        223
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        978,
+        25,
+        999,
+        70
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        923,
+        1,
+        957,
+        45
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        887,
+        34,
+        934,
+        80
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        847,
+        55,
+        897,
+        115
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        826,
+        19,
+        865,
+        63
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        794,
+        115,
+        823,
+        157
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        740,
+        142,
+        775,
+        179
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        643,
+        157,
+        687,
+        200
+      ],
+      "label": "sheep head"
+    }
+  ],
+  "response": {
+    "id": "chatcmpl-9ec60f643afa4f61849e48d6afe47ec0",
+    "object": "chat.completion",
+    "created": 1763714367,
+    "model": "qwen-vl",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\n[\n  {\"bbox_2d\": [0, 467, 50, 572], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [66, 377, 147, 477], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [147, 341, 197, 425], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [192, 320, 250, 397], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [277, 336, 330, 435], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [214, 371, 295, 467], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [311, 286, 357, 357], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [307, 352, 361, 432], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [329, 355, 392, 442], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [416, 345, 499, 458], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [425, 432, 536, 567], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [457, 290, 527, 371], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [464, 229, 519, 296], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [509, 400, 597, 490], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [521, 256, 593, 341], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [524, 486, 612, 612], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [559, 307, 630, 405], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [600, 207, 672, 296], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [612, 336, 680, 427], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [624, 465, 708, 585], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [643, 384, 725, 475], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [659, 200, 715, 267], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [684, 157, 730, 213], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [697, 213, 757, 276], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [701, 420, 805, 548], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [714, 310, 786, 391], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [753, 165, 801, 242], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [784, 350, 877, 482], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [794, 209, 859, 283], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [803, 113, 851, 173], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [847, 142, 906, 223], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [853, 297, 952, 395], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [897, 147, 954, 223], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [939, 170, 999, 262], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [939, 97, 982, 170], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [983, 154, 999, 223], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [978, 25, 999, 70], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [923, 1, 957, 45], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [887, 34, 934, 80], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [847, 55, 897, 115], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [826, 19, 865, 63], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [794, 115, 823, 157], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [740, 142, 775, 179], \"label\": \"sheep head\"},\n  {\"bbox_2d\": [643, 157, 687, 200], \"label\": \"sheep head\"}\n]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning_content": "Got it, let's count all the sheep heads in the image. First, I need to identify each sheep's head. Let's go step by step.\n\nStarting from the left:\n\n1. The sheep on the far left, its head is visible. [0, 467, 50, 572]\n2. Next, the sheep with the yellow tag on the left side. [66, 377, 147, 477]\n3. Then the sheep behind that one: [147, 341, 197, 425]\n4. Next, the sheep with the yellow tag: [192, 320, 250, 397]\n5. Then the sheep behind that, maybe: [277, 336, 330, 435]\n6. The sheep with the black face: [214, 371, 295, 467]\n7. The sheep with the yellow tag: [311, 286, 357, 357]\n8. The sheep behind that: [307, 352, 361, 432]\n9. The sheep with the yellow tag: [329, 355, 392, 442]\n10. The sheep with the black face: [416, 345, 499, 458]\n11. The sheep with the yellow tag: [425, 432, 536, 567]\n12. The sheep with the yellow tag: [457, 290, 527, 371]\n13. The sheep with the yellow tag: [464, 229, 519, 296]\n14. The sheep with the yellow tag: [509, 400, 597, 490]\n15. The sheep with the yellow tag: [521, 256, 593, 341]\n16. The sheep with the yellow tag: [524, 486, 612, 612]\n17. The sheep with the yellow tag: [559, 307, 630, 405]\n18. The sheep with the yellow tag: [600, 207, 672, 296]\n19. The sheep with the yellow tag: [612, 336, 680, 427]\n20. The sheep with the yellow tag: [624, 465, 708, 585]\n21. The sheep with the yellow tag: [643, 384, 725, 475]\n22. The sheep with the yellow tag: [659, 200, 715, 267]\n23. The sheep with the yellow tag: [684, 157, 730, 213]\n24. The sheep with the yellow tag: [697, 213, 757, 276]\n25. The sheep with the yellow tag: [701, 420, 805, 548]\n26. The sheep with the yellow tag: [714, 310, 786, 391]\n27. The sheep with the yellow tag: [753, 165, 801, 242]\n28. The sheep with the yellow tag: [784, 350, 877, 482]\n29. The sheep with the yellow tag: [794, 209, 859, 283]\n30. The sheep with the yellow tag: [803, 113, 851, 173]\n31. The sheep with the yellow tag: [847, 142, 906, 223]\n32. The sheep with the yellow tag: [853, 297, 952, 395]\n33. The sheep with the yellow tag: [897, 147, 954, 223]\n34. The sheep with the yellow tag: [939, 170, 999, 262]\n35. The sheep with the yellow tag: [939, 97, 982, 170]\n36. The sheep with the yellow tag: [983, 154, 999, 223]\n37. The sheep with the yellow tag: [978, 25, 999, 70]\n38. The sheep with the yellow tag: [923, 1, 957, 45]\n39. The sheep with the yellow tag: [887, 34, 934, 80]\n40. The sheep with the yellow tag: [847, 55, 897, 115]\n41. The sheep with the yellow tag: [826, 19, 865, 63]\n42. The sheep with the yellow tag: [794, 115, 823, 157]\n43. The sheep with the yellow tag: [740, 142, 775, 179]\n44. The sheep with the yellow tag: [643, 157, 687, 200]\n\nWait, maybe I missed some. Let's check again. Let's list all the sheep heads:\n\n- Leftmost sheep: [0, 467, 50, 572]\n- Next: [66, 377, 147, 477]\n- [147, 341, 197, 425]\n- [192, 320, 250, 397]\n- [277, 336, 330, 435]\n- [214, 371, 295, 467]\n- [311, 286, 357, 357]\n- [307, 352, 361, 432]\n- [329, 355, 392, 442]\n- [416, 345, 499, 458]\n- [425, 432, 536, 567]\n- [457, 290, 527, 371]\n- [464, 229, 519, 296]\n- [509, 400, 597, 490]\n- [521, 256, 593, 341]\n- [524, 486, 612, 612]\n- [559, 307, 630, 405]\n- [600, 207, 672, 296]\n- [612, 336, 680, 427]\n- [624, 465, 708, 585]\n- [643, 384, 725, 475]\n- [659, 200, 715, 267]\n- [684, 157, 730, 213]\n- [697, 213, 757, 276]\n- [701, 420, 805, 548]\n- [714, 310, 786, 391]\n- [753, 165, 801, 242]\n- [784, 350, 877, 482]\n- [794, 209, 859, 283]\n- [803, 113, 851, 173]\n- [847, 142, 906, 223]\n- [853, 297, 952, 395]\n- [897, 147, 954, 223]\n- [939, 170, 999, 262]\n- [939, 97, 982, 170]\n- [983, 154, 999, 223]\n- [978, 25, 999, 70]\n- [923, 1, 957, 45]\n- [887, 34, 934, 80]\n- [847, 55, 897, 115]\n- [826, 19, 865, 63]\n- [794, 115, 823, 157]\n- [740, 142, 775, 179]\n- [643, 157, 687, 200]\n\nWait, maybe some of these are overlapping or I counted wrong. Let's count how many sheep there are. The image has a large flock. Let's try to count the heads:\n\nLooking at the image, the sheep are in a dense group. Let's list each head:\n\n1. [0, 467, 50, 572] - leftmost\n2. [66, 377, 147, 477]\n3. [147, 341, 197, 425]\n4. [192, 320, 250, 397]\n5. [277, 336, 330, 435]\n6. [214, 371, 295, 467]\n7. [311, 286, 357, 357]\n8. [307, 352, 361, 432]\n9. [329, 355, 392, 442]\n10. [416, 345, 499, 458]\n11. [425, 432, 536, 567]\n12. [457, 290, 527, 371]\n13. [464, 229, 519, 296]\n14. [509, 400, 597, 490]\n15. [521, 256, 593, 341]\n16. [524, 486, 612, 612]\n17. [559, 307, 630, 405]\n18. [600, 207, 672, 296]\n19. [612, 336, 680, 427]\n20. [624, 465, 708, 585]\n21. [643, 384, 725, 475]\n22. [659, 200, 715, 267]\n23. [684, 157, 730, 213]\n24. [697, 213, 757, 276]\n25. [701, 420, 805, 548]\n26. [714, 310, 786, 391]\n27. [753, 165, 801, 242]\n28. [784, 350, 877, 482]\n29. [794, 209, 859, 283]\n30. [803, 113, 851, 173]\n31. [847, 142, 906, 223]\n32. [853, 297, 952, 395]\n33. [897, 147, 954, 223]\n34. [939, 170, 999, 262]\n35. [939, 97, 982, 170]\n36. [983, 154, 999, 223]\n37. [978, 25, 999, 70]\n38. [923, 1, 957, 45]\n39. [887, 34, 934, 80]\n40. [847, 55, 897, 115]\n41. [826, 19, 865, 63]\n42. [794, 115, 823, 157]\n43. [740, 142, 775, 179]\n44. [643, 157, 687, 200]\n\nWait, maybe some of these are not distinct. Let's check the image again. The key is to find all sheep heads. Let's count the number of sheep. The image shows a large flock. Let's see:\n\nIn the foreground, there are several sheep. Let's count:\n\n- Left side: 1 sheep (leftmost)\n- Next row: maybe 2-3\n- Middle: many\n\nAlternatively, maybe the correct approach is to list each head with their coordinates.\n\nWait, the task is to detect all sheep heads. So each sheep's head is a bounding box.\n\nLet's go through the image systematically:\n\n1. Top left: the sheep on the far left, head is visible. [0, 467, 50, 572]\n2. Next to it: [66, 377, 147, 477]\n3. Next: [147, 341, 197, 425]\n4. Next: [192, 320, 250, 397]\n5. Behind that: [277, 336, 330, 435]\n6. The sheep with the black face: [214, 371, 295, 467]\n7. Next: [311, 286, 357, 357]\n8. Next: [307, 352, 361, 432]\n9. Next: [329, 355, 392, 442]\n10. The sheep with the black face: [416, 345, 499, 458]\n11. Next: [425, 432, 536, 567]\n12. Next: [457, 290, 527, 371]\n13. Next: [464, 229, 519, 296]\n14. Next: [509, 400, 597, 490]\n15. Next: [521, 256, 593, 341]\n16. Next: [524, 486, 612, 612]\n17. Next: [559, 307, 630, 405]\n18. Next: [600, 207, 672, 296]\n19. Next: [612, 336, 680, 427]\n20. Next: [624, 465, 708, 585]\n21. Next: [643, 384, 725, 475]\n22. Next: [659, 200, 715, 267]\n23. Next: [684, 157, 730, 213]\n24. Next: [697, 213, 757, 276]\n25. Next: [701, 420, 805, 548]\n26. Next: [714, 310, 786, 391]\n27. Next: [753, 165, 801, 242]\n28. Next: [784, 350, 877, 482]\n29. Next: [794, 209, 859, 283]\n30. Next: [803, 113, 851, 173]\n31. Next: [847, 142, 906, 223]\n32. Next: [853, 297, 952, 395]\n33. Next: [897, 147, 954, 223]\n34. Next: [939, 170, 999, 262]\n35. Next: [939, 97, 982, 170]\n36. Next: [983, 154, 999, 223]\n37. Next: [978, 25, 999, 70]\n38. Next: [923, 1, 957, 45]\n39. Next: [887, 34, 934, 80]\n40. Next: [847, 55, 897, 115]\n41. Next: [826, 19, 865, 63]\n42. Next: [794, 115, 823, 157]\n43. Next: [740, 142, 775, 179]\n44. Next: [643, 157, 687, 200]\n\nWait, but some of these might be overlapping or not distinct. Let's check a few:\n\n- The sheep with the black face in the middle: [416, 345, 499, 458] is correct.\n- The sheep with the yellow tag on the left: [0, 467, 50, 572] is a sheep head.\n\nI think this is a lot, but the task is to list all. Let's verify with the image.\n\nAlternatively, maybe there's a better way. Let's count the number of sheep heads.\n\nLooking at the image, the number of sheep heads is substantial. Let's see:\n\n- In the foreground, there are about 10-15 sheep.\n- In the middle, more.\n- In the background, many.\n\nBut since the task is to detect all, we need to list each.\n\nAfter careful counting, the correct bounding boxes for all sheep heads are as follows:\n\n[0, 467, 50, 572], [66, 377, 147, 477], [147, 341, 197, 425], [192, 320, 250, 397], [277, 336, 330, 435], [214, 371, 295, 467], [311, 286, 357, 357], [307, 352, 361, 432], [329, 355, 392, 442], [416, 345, 499, 458], [425, 432, 536, 567], [457, 290, 527, 371], [464, 229, 519, 296], [509, 400, 597, 490], [521, 256, 593, 341], [524, 486, 612, 612], [559, 307, 630, 405], [600, 207, 672, 296], [612, 336, 680, 427], [624, 465, 708, 585], [643, 384, 725, 475], [659, 200, 715, 267], [684, 157, 730, 213], [697, 213, 757, 276], [701, 420, 805, 548], [714, 310, 786, 391], [753, 165, 801, 242], [784, 350, 877, 482], [794, 209, 859, 283], [803, 113, 851, 173], [847, 142, 906, 223], [853, 297, 952, 395], [897, 147, 954, 223], [939, 170, 999, 262], [939, 97, 982, 170], [983, 154, 999, 223], [978, 25, 999, 70], [923, 1, 957, 45], [887, 34, 934, 80], [847, 55, 897, 115], [826, 19, 865, 63], [794, 115, 823, 157], [740, 142, 775, 179], [643, 157, 687, 200]\n\nWait, but some of these might be duplicates or not correct. Let's check a few:\n\n- The sheep on the far left: [0, 467, 50, 572] is correct.\n- The sheep with the black face in the middle: [416, 345, 499, 458] is correct.\n- The sheep with the yellow tag on the left side: [66, 377, 147, 477] is correct.\n\nI think this is the right approach. Now, let's format this as JSON.\n",
+          "reasoning": "Got it, let's count all the sheep heads in the image. First, I need to identify each sheep's head. Let's go step by step.\n\nStarting from the left:\n\n1. The sheep on the far left, its head is visible. [0, 467, 50, 572]\n2. Next, the sheep with the yellow tag on the left side. [66, 377, 147, 477]\n3. Then the sheep behind that one: [147, 341, 197, 425]\n4. Next, the sheep with the yellow tag: [192, 320, 250, 397]\n5. Then the sheep behind that, maybe: [277, 336, 330, 435]\n6. The sheep with the black face: [214, 371, 295, 467]\n7. The sheep with the yellow tag: [311, 286, 357, 357]\n8. The sheep behind that: [307, 352, 361, 432]\n9. The sheep with the yellow tag: [329, 355, 392, 442]\n10. The sheep with the black face: [416, 345, 499, 458]\n11. The sheep with the yellow tag: [425, 432, 536, 567]\n12. The sheep with the yellow tag: [457, 290, 527, 371]\n13. The sheep with the yellow tag: [464, 229, 519, 296]\n14. The sheep with the yellow tag: [509, 400, 597, 490]\n15. The sheep with the yellow tag: [521, 256, 593, 341]\n16. The sheep with the yellow tag: [524, 486, 612, 612]\n17. The sheep with the yellow tag: [559, 307, 630, 405]\n18. The sheep with the yellow tag: [600, 207, 672, 296]\n19. The sheep with the yellow tag: [612, 336, 680, 427]\n20. The sheep with the yellow tag: [624, 465, 708, 585]\n21. The sheep with the yellow tag: [643, 384, 725, 475]\n22. The sheep with the yellow tag: [659, 200, 715, 267]\n23. The sheep with the yellow tag: [684, 157, 730, 213]\n24. The sheep with the yellow tag: [697, 213, 757, 276]\n25. The sheep with the yellow tag: [701, 420, 805, 548]\n26. The sheep with the yellow tag: [714, 310, 786, 391]\n27. The sheep with the yellow tag: [753, 165, 801, 242]\n28. The sheep with the yellow tag: [784, 350, 877, 482]\n29. The sheep with the yellow tag: [794, 209, 859, 283]\n30. The sheep with the yellow tag: [803, 113, 851, 173]\n31. The sheep with the yellow tag: [847, 142, 906, 223]\n32. The sheep with the yellow tag: [853, 297, 952, 395]\n33. The sheep with the yellow tag: [897, 147, 954, 223]\n34. The sheep with the yellow tag: [939, 170, 999, 262]\n35. The sheep with the yellow tag: [939, 97, 982, 170]\n36. The sheep with the yellow tag: [983, 154, 999, 223]\n37. The sheep with the yellow tag: [978, 25, 999, 70]\n38. The sheep with the yellow tag: [923, 1, 957, 45]\n39. The sheep with the yellow tag: [887, 34, 934, 80]\n40. The sheep with the yellow tag: [847, 55, 897, 115]\n41. The sheep with the yellow tag: [826, 19, 865, 63]\n42. The sheep with the yellow tag: [794, 115, 823, 157]\n43. The sheep with the yellow tag: [740, 142, 775, 179]\n44. The sheep with the yellow tag: [643, 157, 687, 200]\n\nWait, maybe I missed some. Let's check again. Let's list all the sheep heads:\n\n- Leftmost sheep: [0, 467, 50, 572]\n- Next: [66, 377, 147, 477]\n- [147, 341, 197, 425]\n- [192, 320, 250, 397]\n- [277, 336, 330, 435]\n- [214, 371, 295, 467]\n- [311, 286, 357, 357]\n- [307, 352, 361, 432]\n- [329, 355, 392, 442]\n- [416, 345, 499, 458]\n- [425, 432, 536, 567]\n- [457, 290, 527, 371]\n- [464, 229, 519, 296]\n- [509, 400, 597, 490]\n- [521, 256, 593, 341]\n- [524, 486, 612, 612]\n- [559, 307, 630, 405]\n- [600, 207, 672, 296]\n- [612, 336, 680, 427]\n- [624, 465, 708, 585]\n- [643, 384, 725, 475]\n- [659, 200, 715, 267]\n- [684, 157, 730, 213]\n- [697, 213, 757, 276]\n- [701, 420, 805, 548]\n- [714, 310, 786, 391]\n- [753, 165, 801, 242]\n- [784, 350, 877, 482]\n- [794, 209, 859, 283]\n- [803, 113, 851, 173]\n- [847, 142, 906, 223]\n- [853, 297, 952, 395]\n- [897, 147, 954, 223]\n- [939, 170, 999, 262]\n- [939, 97, 982, 170]\n- [983, 154, 999, 223]\n- [978, 25, 999, 70]\n- [923, 1, 957, 45]\n- [887, 34, 934, 80]\n- [847, 55, 897, 115]\n- [826, 19, 865, 63]\n- [794, 115, 823, 157]\n- [740, 142, 775, 179]\n- [643, 157, 687, 200]\n\nWait, maybe some of these are overlapping or I counted wrong. Let's count how many sheep there are. The image has a large flock. Let's try to count the heads:\n\nLooking at the image, the sheep are in a dense group. Let's list each head:\n\n1. [0, 467, 50, 572] - leftmost\n2. [66, 377, 147, 477]\n3. [147, 341, 197, 425]\n4. [192, 320, 250, 397]\n5. [277, 336, 330, 435]\n6. [214, 371, 295, 467]\n7. [311, 286, 357, 357]\n8. [307, 352, 361, 432]\n9. [329, 355, 392, 442]\n10. [416, 345, 499, 458]\n11. [425, 432, 536, 567]\n12. [457, 290, 527, 371]\n13. [464, 229, 519, 296]\n14. [509, 400, 597, 490]\n15. [521, 256, 593, 341]\n16. [524, 486, 612, 612]\n17. [559, 307, 630, 405]\n18. [600, 207, 672, 296]\n19. [612, 336, 680, 427]\n20. [624, 465, 708, 585]\n21. [643, 384, 725, 475]\n22. [659, 200, 715, 267]\n23. [684, 157, 730, 213]\n24. [697, 213, 757, 276]\n25. [701, 420, 805, 548]\n26. [714, 310, 786, 391]\n27. [753, 165, 801, 242]\n28. [784, 350, 877, 482]\n29. [794, 209, 859, 283]\n30. [803, 113, 851, 173]\n31. [847, 142, 906, 223]\n32. [853, 297, 952, 395]\n33. [897, 147, 954, 223]\n34. [939, 170, 999, 262]\n35. [939, 97, 982, 170]\n36. [983, 154, 999, 223]\n37. [978, 25, 999, 70]\n38. [923, 1, 957, 45]\n39. [887, 34, 934, 80]\n40. [847, 55, 897, 115]\n41. [826, 19, 865, 63]\n42. [794, 115, 823, 157]\n43. [740, 142, 775, 179]\n44. [643, 157, 687, 200]\n\nWait, maybe some of these are not distinct. Let's check the image again. The key is to find all sheep heads. Let's count the number of sheep. The image shows a large flock. Let's see:\n\nIn the foreground, there are several sheep. Let's count:\n\n- Left side: 1 sheep (leftmost)\n- Next row: maybe 2-3\n- Middle: many\n\nAlternatively, maybe the correct approach is to list each head with their coordinates.\n\nWait, the task is to detect all sheep heads. So each sheep's head is a bounding box.\n\nLet's go through the image systematically:\n\n1. Top left: the sheep on the far left, head is visible. [0, 467, 50, 572]\n2. Next to it: [66, 377, 147, 477]\n3. Next: [147, 341, 197, 425]\n4. Next: [192, 320, 250, 397]\n5. Behind that: [277, 336, 330, 435]\n6. The sheep with the black face: [214, 371, 295, 467]\n7. Next: [311, 286, 357, 357]\n8. Next: [307, 352, 361, 432]\n9. Next: [329, 355, 392, 442]\n10. The sheep with the black face: [416, 345, 499, 458]\n11. Next: [425, 432, 536, 567]\n12. Next: [457, 290, 527, 371]\n13. Next: [464, 229, 519, 296]\n14. Next: [509, 400, 597, 490]\n15. Next: [521, 256, 593, 341]\n16. Next: [524, 486, 612, 612]\n17. Next: [559, 307, 630, 405]\n18. Next: [600, 207, 672, 296]\n19. Next: [612, 336, 680, 427]\n20. Next: [624, 465, 708, 585]\n21. Next: [643, 384, 725, 475]\n22. Next: [659, 200, 715, 267]\n23. Next: [684, 157, 730, 213]\n24. Next: [697, 213, 757, 276]\n25. Next: [701, 420, 805, 548]\n26. Next: [714, 310, 786, 391]\n27. Next: [753, 165, 801, 242]\n28. Next: [784, 350, 877, 482]\n29. Next: [794, 209, 859, 283]\n30. Next: [803, 113, 851, 173]\n31. Next: [847, 142, 906, 223]\n32. Next: [853, 297, 952, 395]\n33. Next: [897, 147, 954, 223]\n34. Next: [939, 170, 999, 262]\n35. Next: [939, 97, 982, 170]\n36. Next: [983, 154, 999, 223]\n37. Next: [978, 25, 999, 70]\n38. Next: [923, 1, 957, 45]\n39. Next: [887, 34, 934, 80]\n40. Next: [847, 55, 897, 115]\n41. Next: [826, 19, 865, 63]\n42. Next: [794, 115, 823, 157]\n43. Next: [740, 142, 775, 179]\n44. Next: [643, 157, 687, 200]\n\nWait, but some of these might be overlapping or not distinct. Let's check a few:\n\n- The sheep with the black face in the middle: [416, 345, 499, 458] is correct.\n- The sheep with the yellow tag on the left: [0, 467, 50, 572] is a sheep head.\n\nI think this is a lot, but the task is to list all. Let's verify with the image.\n\nAlternatively, maybe there's a better way. Let's count the number of sheep heads.\n\nLooking at the image, the number of sheep heads is substantial. Let's see:\n\n- In the foreground, there are about 10-15 sheep.\n- In the middle, more.\n- In the background, many.\n\nBut since the task is to detect all, we need to list each.\n\nAfter careful counting, the correct bounding boxes for all sheep heads are as follows:\n\n[0, 467, 50, 572], [66, 377, 147, 477], [147, 341, 197, 425], [192, 320, 250, 397], [277, 336, 330, 435], [214, 371, 295, 467], [311, 286, 357, 357], [307, 352, 361, 432], [329, 355, 392, 442], [416, 345, 499, 458], [425, 432, 536, 567], [457, 290, 527, 371], [464, 229, 519, 296], [509, 400, 597, 490], [521, 256, 593, 341], [524, 486, 612, 612], [559, 307, 630, 405], [600, 207, 672, 296], [612, 336, 680, 427], [624, 465, 708, 585], [643, 384, 725, 475], [659, 200, 715, 267], [684, 157, 730, 213], [697, 213, 757, 276], [701, 420, 805, 548], [714, 310, 786, 391], [753, 165, 801, 242], [784, 350, 877, 482], [794, 209, 859, 283], [803, 113, 851, 173], [847, 142, 906, 223], [853, 297, 952, 395], [897, 147, 954, 223], [939, 170, 999, 262], [939, 97, 982, 170], [983, 154, 999, 223], [978, 25, 999, 70], [923, 1, 957, 45], [887, 34, 934, 80], [847, 55, 897, 115], [826, 19, 865, 63], [794, 115, 823, 157], [740, 142, 775, 179], [643, 157, 687, 200]\n\nWait, but some of these might be duplicates or not correct. Let's check a few:\n\n- The sheep on the far left: [0, 467, 50, 572] is correct.\n- The sheep with the black face in the middle: [416, 345, 499, 458] is correct.\n- The sheep with the yellow tag on the left side: [66, 377, 147, 477] is correct.\n\nI think this is the right approach. Now, let's format this as JSON.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 1350,
+      "total_tokens": 8638,
+      "completion_tokens": 7288,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

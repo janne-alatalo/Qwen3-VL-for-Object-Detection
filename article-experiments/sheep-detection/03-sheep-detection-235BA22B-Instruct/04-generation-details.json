@@ -1,0 +1,521 @@
+{
+  "model": "qwen-vl",
+  "created_at": 1763717881,
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 1350,
+    "total_tokens": 7289,
+    "completion_tokens": 5939,
+    "prompt_tokens_details": null
+  },
+  "elapsed_seconds": 130.7383667549875,
+  "assistant_text": "\n\n[{\"bbox_2d\": [0, 465, 58, 560], \"label\": \"sheep head\"}, {\"bbox_2d\": [66, 379, 154, 479], \"label\": \"sheep head\"}, {\"bbox_2d\": [134, 339, 202, 430], \"label\": \"sheep head\"}, {\"bbox_2d\": [155, 486, 269, 612], \"label\": \"sheep head\"}, {\"bbox_2d\": [196, 319, 262, 410], \"label\": \"sheep head\"}, {\"bbox_2d\": [214, 369, 295, 469], \"label\": \"sheep head\"}, {\"bbox_2d\": [273, 336, 332, 434], \"label\": \"sheep head\"}, {\"bbox_2d\": [299, 283, 362, 359], \"label\": \"sheep head\"}, {\"bbox_2d\": [326, 355, 397, 453], \"label\": \"sheep head\"}, {\"bbox_2d\": [351, 299, 424, 386], \"label\": \"sheep head\"}, {\"bbox_2d\": [418, 343, 497, 464], \"label\": \"sheep head\"}, {\"bbox_2d\": [426, 432, 530, 565], \"label\": \"sheep head\"}, {\"bbox_2d\": [457, 289, 525, 376], \"label\": \"sheep head\"}, {\"bbox_2d\": [456, 226, 520, 293], \"label\": \"sheep head\"}, {\"bbox_2d\": [512, 252, 589, 343], \"label\": \"sheep head\"}, {\"bbox_2d\": [502, 386, 606, 493], \"label\": \"sheep head\"}, {\"bbox_2d\": [556, 319, 635, 416], \"label\": \"sheep head\"}, {\"bbox_2d\": [616, 206, 686, 293], \"label\": \"sheep head\"}, {\"bbox_2d\": [620, 342, 688, 436], \"label\": \"sheep head\"}, {\"bbox_2d\": [621, 464, 717, 588], \"label\": \"sheep head\"}, {\"bbox_2d\": [713, 419, 807, 552], \"label\": \"sheep head\"}, {\"bbox_2d\": [717, 312, 789, 392], \"label\": \"sheep head\"}, {\"bbox_2d\": [786, 354, 877, 483], \"label\": \"sheep head\"}, {\"bbox_2d\": [795, 209, 858, 289], \"label\": \"sheep head\"}, {\"bbox_2d\": [825, 116, 865, 178], \"label\": \"sheep head\"}, {\"bbox_2d\": [829, 19, 869, 78], \"label\": \"sheep head\"}, {\"bbox_2d\": [844, 56, 888, 119], \"label\": \"sheep head\"}, {\"bbox_2d\": [852, 140, 912, 225], \"label\": \"sheep head\"}, {\"bbox_2d\": [863, 297, 949, 393], \"label\": \"sheep head\"}, {\"bbox_2d\": [936, 167, 999, 259], \"label\": \"sheep head\"}, {\"bbox_2d\": [922, 95, 976, 152], \"label\": \"sheep head\"}, {\"bbox_2d\": [887, 37, 926, 93], \"label\": \"sheep head\"}, {\"bbox_2d\": [925, 35, 962, 86], \"label\": \"sheep head\"}, {\"bbox_2d\": [900, 5, 932, 43], \"label\": \"sheep head\"}, {\"bbox_2d\": [951, 0, 983, 28], \"label\": \"sheep head\"}, {\"bbox_2d\": [975, 12, 999, 50], \"label\": \"sheep head\"}, {\"bbox_2d\": [656, 386, 732, 483], \"label\": \"sheep head\"}, {\"bbox_2d\": [641, 292, 715, 366], \"label\": \"sheep head\"}, {\"bbox_2d\": [661, 200, 715, 274], \"label\": \"sheep head\"}, {\"bbox_2d\": [694, 209, 745, 275], \"label\": \"sheep head\"}, {\"bbox_2d\": [699, 156, 758, 215], \"label\": \"sheep head\"}, {\"bbox_2d\": [742, 140, 783, 186], \"label\": \"sheep head\"}, {\"bbox_2d\": [755, 163, 812, 246], \"label\": \"sheep head\"}, {\"bbox_2d\": [782, 147, 827, 199], \"label\": \"sheep head\"}, {\"bbox_2d\": [801, 112, 847, 164], \"label\": \"sheep head\"}, {\"bbox_2d\": [887, 116, 930, 164], \"label\": \"sheep head\"}, {\"bbox_2d\": [939, 10, 970, 46], \"label\": \"sheep head\"}, {\"bbox_2d\": [966, 159, 999, 206], \"label\": \"sheep head\"}, {\"bbox_2d\": [778, 317, 847, 369], \"label\": \"sheep head\"}, {\"bbox_2d\": [513, 228, 562, 274], \"label\": \"sheep head\"}, {\"bbox_2d\": [252, 326, 297, 376], \"label\": \"sheep head\"}, {\"bbox_2d\": [529, 484, 609, 612], \"label\": \"sheep head\"}]",
+  "cot_text": "Got it, let's count all the sheep heads in the image. First, I need to identify each sheep's head. Let's go step by step.\n\nStarting from the left:\n\n1. The sheep on the far left, partial, head [0, 465, 57, 560]\n2. Next, a sheep with a white face, [67, 380, 154, 479]\n3. Then, a sheep with a white face, [135, 340, 202, 430]\n4. The black and white sheep, [215, 370, 295, 469]\n5. The sheep in front left, [156, 487, 269, 612]\n6. The sheep behind the black and white one, [197, 320, 262, 410]\n7. The sheep next to that, [274, 337, 332, 434]\n8. The sheep with white face, [300, 284, 362, 360]\n9. The sheep in the middle front, [327, 356, 397, 453]\n10. The sheep behind that, [352, 300, 424, 387]\n11. The black and white sheep, [419, 344, 497, 464]\n12. The sheep with white face, [427, 433, 530, 565]\n13. The sheep behind the previous one, [459, 290, 525, 377]\n14. The sheep with white face, [457, 227, 520, 294]\n15. The sheep next to that, [512, 253, 590, 344]\n16. The sheep with white face, [503, 387, 606, 494]\n17. The sheep in the middle, [557, 320, 635, 417]\n18. The sheep with white face, [617, 207, 686, 294]\n19. The sheep next to that, [620, 343, 688, 437]\n20. The sheep with white face, [622, 465, 717, 589]\n21. The sheep with white face, [714, 420, 807, 553]\n22. The sheep with white face, [718, 312, 789, 393]\n23. The sheep with white face, [787, 355, 877, 484]\n24. The sheep behind, [796, 209, 858, 290]\n25. The sheep with white face, [826, 116, 865, 179]\n26. The sheep with white face, [830, 19, 869, 79]\n27. The sheep with white face, [845, 56, 888, 120]\n28. The sheep with white face, [853, 140, 912, 226]\n29. The sheep with white face, [864, 297, 949, 394]\n30. The sheep with white face, [937, 167, 999, 260]\n31. The sheep with white face, [923, 95, 976, 153]\n32. The sheep with white face, [888, 37, 926, 94]\n33. The sheep with white face, [926, 35, 962, 87]\n34. The sheep with white face, [901, 5, 932, 44]\n35. The sheep with white face, [952, 0, 983, 29]\n36. The sheep with white face, [976, 12, 999, 51]\n37. The sheep with white face, [657, 387, 732, 484]\n38. The sheep with white face, [642, 292, 715, 367]\n39. The sheep with white face, [662, 200, 715, 275]\n40. The sheep with white face, [695, 209, 745, 277]\n41. The sheep with white face, [700, 156, 758, 216]\n42. The sheep with white face, [743, 140, 783, 187]\n43. The sheep with white face, [756, 163, 812, 247]\n44. The sheep with white face, [783, 147, 827, 200]\n45. The sheep with white face, [802, 112, 847, 165]\n46. The sheep with white face, [888, 116, 930, 165]\n47. The sheep with white face, [940, 10, 970, 47]\n48. The sheep with white face, [967, 159, 999, 207]\n49. The sheep with white face, [779, 317, 847, 370]\n50. The sheep with white face, [514, 229, 562, 275]\n51. The sheep with white face, [253, 326, 297, 377]\n52. The sheep with white face, [530, 484, 609, 613]\n\nWait, this is getting complicated. Maybe a better approach is to count all visible heads. Let's list each one with their coordinates.\n\nLet me check again:\n\n1. [0, 466, 56, 559] - sheep head\n2. [68, 381, 153, 478] - sheep head\n3. [136, 341, 201, 429] - sheep head\n4. [157, 488, 268, 611] - sheep head\n5. [198, 321, 261, 409] - sheep head\n6. [216, 371, 294, 468] - sheep head\n7. [275, 338, 331, 433] - sheep head\n8. [301, 285, 361, 359] - sheep head\n9. [328, 357, 396, 452] - sheep head\n10. [353, 301, 423, 386] - sheep head\n11. [420, 345, 496, 463] - sheep head\n12. [428, 434, 529, 564] - sheep head\n13. [458, 291, 524, 376] - sheep head\n14. [458, 228, 519, 293] - sheep head\n15. [513, 254, 589, 343] - sheep head\n16. [504, 388, 605, 493] - sheep head\n17. [558, 321, 634, 416] - sheep head\n18. [618, 208, 685, 293] - sheep head\n19. [621, 344, 687, 436] - sheep head\n20. [623, 466, 716, 588] - sheep head\n21. [715, 421, 806, 552] - sheep head\n22. [719, 313, 788, 392] - sheep head\n23. [788, 356, 876, 483] - sheep head\n24. [797, 210, 857, 289] - sheep head\n25. [827, 117, 864, 178] - sheep head\n26. [831, 20, 868, 78] - sheep head\n27. [846, 57, 887, 119] - sheep head\n28. [854, 141, 911, 225] - sheep head\n29. [865, 298, 948, 393] - sheep head\n30. [938, 168, 999, 259] - sheep head\n31. [924, 96, 975, 152] - sheep head\n32. [889, 38, 925, 93] - sheep head\n33. [927, 36, 961, 86] - sheep head\n34. [902, 6, 931, 43] - sheep head\n35. [953, 1, 982, 28] - sheep head\n36. [977, 13, 999, 50] - sheep head\n37. [658, 388, 731, 483] - sheep head\n38. [643, 293, 714, 366] - sheep head\n39. [663, 201, 714, 274] - sheep head\n40. [696, 210, 744, 276] - sheep head\n41. [701, 157, 757, 215] - sheep head\n42. [744, 141, 782, 186] - sheep head\n43. [757, 164, 811, 246] - sheep head\n44. [784, 148, 826, 199] - sheep head\n45. [803, 113, 846, 164] - sheep head\n46. [889, 117, 929, 164] - sheep head\n47. [941, 11, 969, 46] - sheep head\n48. [968, 160, 999, 206] - sheep head\n49. [780, 318, 846, 369] - sheep head\n50. [515, 230, 561, 274] - sheep head\n51. [254, 327, 296, 376] - sheep head\n52. [531, 485, 608, 612] - sheep head\n\nWait, but some of these might be duplicates or miscounted. Let's verify with the image.\n\nAlternatively, maybe the correct count is around 50+ heads. Let's make sure each entry is a head.\n\nNow, for each, the label is \"sheep head\".\n\nLet me list all with their bounding boxes:\n\n1. [0, 465, 58, 560]\n2. [66, 379, 154, 479]\n3. [134, 339, 202, 430]\n4. [155, 486, 269, 612]\n5. [196, 319, 262, 410]\n6. [214, 369, 295, 469]\n7. [273, 336, 332, 434]\n8. [299, 283, 362, 359]\n9. [326, 355, 397, 453]\n10. [351, 299, 424, 386]\n11. [418, 343, 497, 464]\n12. [426, 432, 530, 565]\n13. [457, 289, 525, 376]\n14. [456, 226, 520, 293]\n15. [512, 252, 589, 343]\n16. [502, 386, 606, 493]\n17. [556, 319, 635, 416]\n18. [616, 206, 686, 293]\n19. [620, 342, 688, 436]\n20. [621, 464, 717, 588]\n21. [713, 419, 807, 552]\n22. [717, 312, 789, 392]\n23. [786, 354, 877, 483]\n24. [795, 209, 858, 289]\n25. [825, 116, 865, 178]\n26. [829, 19, 869, 78]\n27. [844, 56, 888, 119]\n28. [852, 140, 912, 225]\n29. [863, 297, 949, 393]\n30. [936, 167, 999, 259]\n31. [922, 95, 976, 152]\n32. [887, 37, 926, 93]\n33. [925, 35, 962, 86]\n34. [900, 5, 932, 43]\n35. [951, 0, 983, 28]\n36. [975, 12, 999, 50]\n37. [656, 386, 732, 483]\n38. [641, 292, 715, 366]\n39. [661, 200, 715, 274]\n40. [694, 209, 745, 275]\n41. [699, 156, 758, 215]\n42. [742, 140, 783, 186]\n43. [755, 163, 812, 246]\n44. [782, 147, 827, 199]\n45. [801, 112, 847, 164]\n46. [887, 116, 930, 164]\n47. [939, 10, 970, 46]\n48. [966, 159, 999, 206]\n49. [778, 317, 847, 369]\n50. [513, 228, 562, 274]\n51. [252, 326, 297, 376]\n52. [529, 484, 609, 612]\n\nYes, these are all the visible sheep heads. Now, format each as {\"sheep head\": \"<bbox>\"}.\n",
+  "detections": [
+    {
+      "bbox_2d": [
+        0,
+        465,
+        58,
+        560
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        66,
+        379,
+        154,
+        479
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        134,
+        339,
+        202,
+        430
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        155,
+        486,
+        269,
+        612
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        196,
+        319,
+        262,
+        410
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        214,
+        369,
+        295,
+        469
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        273,
+        336,
+        332,
+        434
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        299,
+        283,
+        362,
+        359
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        326,
+        355,
+        397,
+        453
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        351,
+        299,
+        424,
+        386
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        418,
+        343,
+        497,
+        464
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        426,
+        432,
+        530,
+        565
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        457,
+        289,
+        525,
+        376
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        456,
+        226,
+        520,
+        293
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        512,
+        252,
+        589,
+        343
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        502,
+        386,
+        606,
+        493
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        556,
+        319,
+        635,
+        416
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        616,
+        206,
+        686,
+        293
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        620,
+        342,
+        688,
+        436
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        621,
+        464,
+        717,
+        588
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        713,
+        419,
+        807,
+        552
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        717,
+        312,
+        789,
+        392
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        786,
+        354,
+        877,
+        483
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        795,
+        209,
+        858,
+        289
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        825,
+        116,
+        865,
+        178
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        829,
+        19,
+        869,
+        78
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        844,
+        56,
+        888,
+        119
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        852,
+        140,
+        912,
+        225
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        863,
+        297,
+        949,
+        393
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        936,
+        167,
+        999,
+        259
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        922,
+        95,
+        976,
+        152
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        887,
+        37,
+        926,
+        93
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        925,
+        35,
+        962,
+        86
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        900,
+        5,
+        932,
+        43
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        951,
+        0,
+        983,
+        28
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        975,
+        12,
+        999,
+        50
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        656,
+        386,
+        732,
+        483
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        641,
+        292,
+        715,
+        366
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        661,
+        200,
+        715,
+        274
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        694,
+        209,
+        745,
+        275
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        699,
+        156,
+        758,
+        215
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        742,
+        140,
+        783,
+        186
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        755,
+        163,
+        812,
+        246
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        782,
+        147,
+        827,
+        199
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        801,
+        112,
+        847,
+        164
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        887,
+        116,
+        930,
+        164
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        939,
+        10,
+        970,
+        46
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        966,
+        159,
+        999,
+        206
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        778,
+        317,
+        847,
+        369
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        513,
+        228,
+        562,
+        274
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        252,
+        326,
+        297,
+        376
+      ],
+      "label": "sheep head"
+    },
+    {
+      "bbox_2d": [
+        529,
+        484,
+        609,
+        612
+      ],
+      "label": "sheep head"
+    }
+  ],
+  "response": {
+    "id": "chatcmpl-fb9fdc5c5d434177b060ccdb44a5585f",
+    "object": "chat.completion",
+    "created": 1763717881,
+    "model": "qwen-vl",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "\n\n[{\"bbox_2d\": [0, 465, 58, 560], \"label\": \"sheep head\"}, {\"bbox_2d\": [66, 379, 154, 479], \"label\": \"sheep head\"}, {\"bbox_2d\": [134, 339, 202, 430], \"label\": \"sheep head\"}, {\"bbox_2d\": [155, 486, 269, 612], \"label\": \"sheep head\"}, {\"bbox_2d\": [196, 319, 262, 410], \"label\": \"sheep head\"}, {\"bbox_2d\": [214, 369, 295, 469], \"label\": \"sheep head\"}, {\"bbox_2d\": [273, 336, 332, 434], \"label\": \"sheep head\"}, {\"bbox_2d\": [299, 283, 362, 359], \"label\": \"sheep head\"}, {\"bbox_2d\": [326, 355, 397, 453], \"label\": \"sheep head\"}, {\"bbox_2d\": [351, 299, 424, 386], \"label\": \"sheep head\"}, {\"bbox_2d\": [418, 343, 497, 464], \"label\": \"sheep head\"}, {\"bbox_2d\": [426, 432, 530, 565], \"label\": \"sheep head\"}, {\"bbox_2d\": [457, 289, 525, 376], \"label\": \"sheep head\"}, {\"bbox_2d\": [456, 226, 520, 293], \"label\": \"sheep head\"}, {\"bbox_2d\": [512, 252, 589, 343], \"label\": \"sheep head\"}, {\"bbox_2d\": [502, 386, 606, 493], \"label\": \"sheep head\"}, {\"bbox_2d\": [556, 319, 635, 416], \"label\": \"sheep head\"}, {\"bbox_2d\": [616, 206, 686, 293], \"label\": \"sheep head\"}, {\"bbox_2d\": [620, 342, 688, 436], \"label\": \"sheep head\"}, {\"bbox_2d\": [621, 464, 717, 588], \"label\": \"sheep head\"}, {\"bbox_2d\": [713, 419, 807, 552], \"label\": \"sheep head\"}, {\"bbox_2d\": [717, 312, 789, 392], \"label\": \"sheep head\"}, {\"bbox_2d\": [786, 354, 877, 483], \"label\": \"sheep head\"}, {\"bbox_2d\": [795, 209, 858, 289], \"label\": \"sheep head\"}, {\"bbox_2d\": [825, 116, 865, 178], \"label\": \"sheep head\"}, {\"bbox_2d\": [829, 19, 869, 78], \"label\": \"sheep head\"}, {\"bbox_2d\": [844, 56, 888, 119], \"label\": \"sheep head\"}, {\"bbox_2d\": [852, 140, 912, 225], \"label\": \"sheep head\"}, {\"bbox_2d\": [863, 297, 949, 393], \"label\": \"sheep head\"}, {\"bbox_2d\": [936, 167, 999, 259], \"label\": \"sheep head\"}, {\"bbox_2d\": [922, 95, 976, 152], \"label\": \"sheep head\"}, {\"bbox_2d\": [887, 37, 926, 93], \"label\": \"sheep head\"}, {\"bbox_2d\": [925, 35, 962, 86], \"label\": \"sheep head\"}, {\"bbox_2d\": [900, 5, 932, 43], \"label\": \"sheep head\"}, {\"bbox_2d\": [951, 0, 983, 28], \"label\": \"sheep head\"}, {\"bbox_2d\": [975, 12, 999, 50], \"label\": \"sheep head\"}, {\"bbox_2d\": [656, 386, 732, 483], \"label\": \"sheep head\"}, {\"bbox_2d\": [641, 292, 715, 366], \"label\": \"sheep head\"}, {\"bbox_2d\": [661, 200, 715, 274], \"label\": \"sheep head\"}, {\"bbox_2d\": [694, 209, 745, 275], \"label\": \"sheep head\"}, {\"bbox_2d\": [699, 156, 758, 215], \"label\": \"sheep head\"}, {\"bbox_2d\": [742, 140, 783, 186], \"label\": \"sheep head\"}, {\"bbox_2d\": [755, 163, 812, 246], \"label\": \"sheep head\"}, {\"bbox_2d\": [782, 147, 827, 199], \"label\": \"sheep head\"}, {\"bbox_2d\": [801, 112, 847, 164], \"label\": \"sheep head\"}, {\"bbox_2d\": [887, 116, 930, 164], \"label\": \"sheep head\"}, {\"bbox_2d\": [939, 10, 970, 46], \"label\": \"sheep head\"}, {\"bbox_2d\": [966, 159, 999, 206], \"label\": \"sheep head\"}, {\"bbox_2d\": [778, 317, 847, 369], \"label\": \"sheep head\"}, {\"bbox_2d\": [513, 228, 562, 274], \"label\": \"sheep head\"}, {\"bbox_2d\": [252, 326, 297, 376], \"label\": \"sheep head\"}, {\"bbox_2d\": [529, 484, 609, 612], \"label\": \"sheep head\"}]",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning_content": "Got it, let's count all the sheep heads in the image. First, I need to identify each sheep's head. Let's go step by step.\n\nStarting from the left:\n\n1. The sheep on the far left, partial, head [0, 465, 57, 560]\n2. Next, a sheep with a white face, [67, 380, 154, 479]\n3. Then, a sheep with a white face, [135, 340, 202, 430]\n4. The black and white sheep, [215, 370, 295, 469]\n5. The sheep in front left, [156, 487, 269, 612]\n6. The sheep behind the black and white one, [197, 320, 262, 410]\n7. The sheep next to that, [274, 337, 332, 434]\n8. The sheep with white face, [300, 284, 362, 360]\n9. The sheep in the middle front, [327, 356, 397, 453]\n10. The sheep behind that, [352, 300, 424, 387]\n11. The black and white sheep, [419, 344, 497, 464]\n12. The sheep with white face, [427, 433, 530, 565]\n13. The sheep behind the previous one, [459, 290, 525, 377]\n14. The sheep with white face, [457, 227, 520, 294]\n15. The sheep next to that, [512, 253, 590, 344]\n16. The sheep with white face, [503, 387, 606, 494]\n17. The sheep in the middle, [557, 320, 635, 417]\n18. The sheep with white face, [617, 207, 686, 294]\n19. The sheep next to that, [620, 343, 688, 437]\n20. The sheep with white face, [622, 465, 717, 589]\n21. The sheep with white face, [714, 420, 807, 553]\n22. The sheep with white face, [718, 312, 789, 393]\n23. The sheep with white face, [787, 355, 877, 484]\n24. The sheep behind, [796, 209, 858, 290]\n25. The sheep with white face, [826, 116, 865, 179]\n26. The sheep with white face, [830, 19, 869, 79]\n27. The sheep with white face, [845, 56, 888, 120]\n28. The sheep with white face, [853, 140, 912, 226]\n29. The sheep with white face, [864, 297, 949, 394]\n30. The sheep with white face, [937, 167, 999, 260]\n31. The sheep with white face, [923, 95, 976, 153]\n32. The sheep with white face, [888, 37, 926, 94]\n33. The sheep with white face, [926, 35, 962, 87]\n34. The sheep with white face, [901, 5, 932, 44]\n35. The sheep with white face, [952, 0, 983, 29]\n36. The sheep with white face, [976, 12, 999, 51]\n37. The sheep with white face, [657, 387, 732, 484]\n38. The sheep with white face, [642, 292, 715, 367]\n39. The sheep with white face, [662, 200, 715, 275]\n40. The sheep with white face, [695, 209, 745, 277]\n41. The sheep with white face, [700, 156, 758, 216]\n42. The sheep with white face, [743, 140, 783, 187]\n43. The sheep with white face, [756, 163, 812, 247]\n44. The sheep with white face, [783, 147, 827, 200]\n45. The sheep with white face, [802, 112, 847, 165]\n46. The sheep with white face, [888, 116, 930, 165]\n47. The sheep with white face, [940, 10, 970, 47]\n48. The sheep with white face, [967, 159, 999, 207]\n49. The sheep with white face, [779, 317, 847, 370]\n50. The sheep with white face, [514, 229, 562, 275]\n51. The sheep with white face, [253, 326, 297, 377]\n52. The sheep with white face, [530, 484, 609, 613]\n\nWait, this is getting complicated. Maybe a better approach is to count all visible heads. Let's list each one with their coordinates.\n\nLet me check again:\n\n1. [0, 466, 56, 559] - sheep head\n2. [68, 381, 153, 478] - sheep head\n3. [136, 341, 201, 429] - sheep head\n4. [157, 488, 268, 611] - sheep head\n5. [198, 321, 261, 409] - sheep head\n6. [216, 371, 294, 468] - sheep head\n7. [275, 338, 331, 433] - sheep head\n8. [301, 285, 361, 359] - sheep head\n9. [328, 357, 396, 452] - sheep head\n10. [353, 301, 423, 386] - sheep head\n11. [420, 345, 496, 463] - sheep head\n12. [428, 434, 529, 564] - sheep head\n13. [458, 291, 524, 376] - sheep head\n14. [458, 228, 519, 293] - sheep head\n15. [513, 254, 589, 343] - sheep head\n16. [504, 388, 605, 493] - sheep head\n17. [558, 321, 634, 416] - sheep head\n18. [618, 208, 685, 293] - sheep head\n19. [621, 344, 687, 436] - sheep head\n20. [623, 466, 716, 588] - sheep head\n21. [715, 421, 806, 552] - sheep head\n22. [719, 313, 788, 392] - sheep head\n23. [788, 356, 876, 483] - sheep head\n24. [797, 210, 857, 289] - sheep head\n25. [827, 117, 864, 178] - sheep head\n26. [831, 20, 868, 78] - sheep head\n27. [846, 57, 887, 119] - sheep head\n28. [854, 141, 911, 225] - sheep head\n29. [865, 298, 948, 393] - sheep head\n30. [938, 168, 999, 259] - sheep head\n31. [924, 96, 975, 152] - sheep head\n32. [889, 38, 925, 93] - sheep head\n33. [927, 36, 961, 86] - sheep head\n34. [902, 6, 931, 43] - sheep head\n35. [953, 1, 982, 28] - sheep head\n36. [977, 13, 999, 50] - sheep head\n37. [658, 388, 731, 483] - sheep head\n38. [643, 293, 714, 366] - sheep head\n39. [663, 201, 714, 274] - sheep head\n40. [696, 210, 744, 276] - sheep head\n41. [701, 157, 757, 215] - sheep head\n42. [744, 141, 782, 186] - sheep head\n43. [757, 164, 811, 246] - sheep head\n44. [784, 148, 826, 199] - sheep head\n45. [803, 113, 846, 164] - sheep head\n46. [889, 117, 929, 164] - sheep head\n47. [941, 11, 969, 46] - sheep head\n48. [968, 160, 999, 206] - sheep head\n49. [780, 318, 846, 369] - sheep head\n50. [515, 230, 561, 274] - sheep head\n51. [254, 327, 296, 376] - sheep head\n52. [531, 485, 608, 612] - sheep head\n\nWait, but some of these might be duplicates or miscounted. Let's verify with the image.\n\nAlternatively, maybe the correct count is around 50+ heads. Let's make sure each entry is a head.\n\nNow, for each, the label is \"sheep head\".\n\nLet me list all with their bounding boxes:\n\n1. [0, 465, 58, 560]\n2. [66, 379, 154, 479]\n3. [134, 339, 202, 430]\n4. [155, 486, 269, 612]\n5. [196, 319, 262, 410]\n6. [214, 369, 295, 469]\n7. [273, 336, 332, 434]\n8. [299, 283, 362, 359]\n9. [326, 355, 397, 453]\n10. [351, 299, 424, 386]\n11. [418, 343, 497, 464]\n12. [426, 432, 530, 565]\n13. [457, 289, 525, 376]\n14. [456, 226, 520, 293]\n15. [512, 252, 589, 343]\n16. [502, 386, 606, 493]\n17. [556, 319, 635, 416]\n18. [616, 206, 686, 293]\n19. [620, 342, 688, 436]\n20. [621, 464, 717, 588]\n21. [713, 419, 807, 552]\n22. [717, 312, 789, 392]\n23. [786, 354, 877, 483]\n24. [795, 209, 858, 289]\n25. [825, 116, 865, 178]\n26. [829, 19, 869, 78]\n27. [844, 56, 888, 119]\n28. [852, 140, 912, 225]\n29. [863, 297, 949, 393]\n30. [936, 167, 999, 259]\n31. [922, 95, 976, 152]\n32. [887, 37, 926, 93]\n33. [925, 35, 962, 86]\n34. [900, 5, 932, 43]\n35. [951, 0, 983, 28]\n36. [975, 12, 999, 50]\n37. [656, 386, 732, 483]\n38. [641, 292, 715, 366]\n39. [661, 200, 715, 274]\n40. [694, 209, 745, 275]\n41. [699, 156, 758, 215]\n42. [742, 140, 783, 186]\n43. [755, 163, 812, 246]\n44. [782, 147, 827, 199]\n45. [801, 112, 847, 164]\n46. [887, 116, 930, 164]\n47. [939, 10, 970, 46]\n48. [966, 159, 999, 206]\n49. [778, 317, 847, 369]\n50. [513, 228, 562, 274]\n51. [252, 326, 297, 376]\n52. [529, 484, 609, 612]\n\nYes, these are all the visible sheep heads. Now, format each as {\"sheep head\": \"<bbox>\"}.\n",
+          "reasoning": "Got it, let's count all the sheep heads in the image. First, I need to identify each sheep's head. Let's go step by step.\n\nStarting from the left:\n\n1. The sheep on the far left, partial, head [0, 465, 57, 560]\n2. Next, a sheep with a white face, [67, 380, 154, 479]\n3. Then, a sheep with a white face, [135, 340, 202, 430]\n4. The black and white sheep, [215, 370, 295, 469]\n5. The sheep in front left, [156, 487, 269, 612]\n6. The sheep behind the black and white one, [197, 320, 262, 410]\n7. The sheep next to that, [274, 337, 332, 434]\n8. The sheep with white face, [300, 284, 362, 360]\n9. The sheep in the middle front, [327, 356, 397, 453]\n10. The sheep behind that, [352, 300, 424, 387]\n11. The black and white sheep, [419, 344, 497, 464]\n12. The sheep with white face, [427, 433, 530, 565]\n13. The sheep behind the previous one, [459, 290, 525, 377]\n14. The sheep with white face, [457, 227, 520, 294]\n15. The sheep next to that, [512, 253, 590, 344]\n16. The sheep with white face, [503, 387, 606, 494]\n17. The sheep in the middle, [557, 320, 635, 417]\n18. The sheep with white face, [617, 207, 686, 294]\n19. The sheep next to that, [620, 343, 688, 437]\n20. The sheep with white face, [622, 465, 717, 589]\n21. The sheep with white face, [714, 420, 807, 553]\n22. The sheep with white face, [718, 312, 789, 393]\n23. The sheep with white face, [787, 355, 877, 484]\n24. The sheep behind, [796, 209, 858, 290]\n25. The sheep with white face, [826, 116, 865, 179]\n26. The sheep with white face, [830, 19, 869, 79]\n27. The sheep with white face, [845, 56, 888, 120]\n28. The sheep with white face, [853, 140, 912, 226]\n29. The sheep with white face, [864, 297, 949, 394]\n30. The sheep with white face, [937, 167, 999, 260]\n31. The sheep with white face, [923, 95, 976, 153]\n32. The sheep with white face, [888, 37, 926, 94]\n33. The sheep with white face, [926, 35, 962, 87]\n34. The sheep with white face, [901, 5, 932, 44]\n35. The sheep with white face, [952, 0, 983, 29]\n36. The sheep with white face, [976, 12, 999, 51]\n37. The sheep with white face, [657, 387, 732, 484]\n38. The sheep with white face, [642, 292, 715, 367]\n39. The sheep with white face, [662, 200, 715, 275]\n40. The sheep with white face, [695, 209, 745, 277]\n41. The sheep with white face, [700, 156, 758, 216]\n42. The sheep with white face, [743, 140, 783, 187]\n43. The sheep with white face, [756, 163, 812, 247]\n44. The sheep with white face, [783, 147, 827, 200]\n45. The sheep with white face, [802, 112, 847, 165]\n46. The sheep with white face, [888, 116, 930, 165]\n47. The sheep with white face, [940, 10, 970, 47]\n48. The sheep with white face, [967, 159, 999, 207]\n49. The sheep with white face, [779, 317, 847, 370]\n50. The sheep with white face, [514, 229, 562, 275]\n51. The sheep with white face, [253, 326, 297, 377]\n52. The sheep with white face, [530, 484, 609, 613]\n\nWait, this is getting complicated. Maybe a better approach is to count all visible heads. Let's list each one with their coordinates.\n\nLet me check again:\n\n1. [0, 466, 56, 559] - sheep head\n2. [68, 381, 153, 478] - sheep head\n3. [136, 341, 201, 429] - sheep head\n4. [157, 488, 268, 611] - sheep head\n5. [198, 321, 261, 409] - sheep head\n6. [216, 371, 294, 468] - sheep head\n7. [275, 338, 331, 433] - sheep head\n8. [301, 285, 361, 359] - sheep head\n9. [328, 357, 396, 452] - sheep head\n10. [353, 301, 423, 386] - sheep head\n11. [420, 345, 496, 463] - sheep head\n12. [428, 434, 529, 564] - sheep head\n13. [458, 291, 524, 376] - sheep head\n14. [458, 228, 519, 293] - sheep head\n15. [513, 254, 589, 343] - sheep head\n16. [504, 388, 605, 493] - sheep head\n17. [558, 321, 634, 416] - sheep head\n18. [618, 208, 685, 293] - sheep head\n19. [621, 344, 687, 436] - sheep head\n20. [623, 466, 716, 588] - sheep head\n21. [715, 421, 806, 552] - sheep head\n22. [719, 313, 788, 392] - sheep head\n23. [788, 356, 876, 483] - sheep head\n24. [797, 210, 857, 289] - sheep head\n25. [827, 117, 864, 178] - sheep head\n26. [831, 20, 868, 78] - sheep head\n27. [846, 57, 887, 119] - sheep head\n28. [854, 141, 911, 225] - sheep head\n29. [865, 298, 948, 393] - sheep head\n30. [938, 168, 999, 259] - sheep head\n31. [924, 96, 975, 152] - sheep head\n32. [889, 38, 925, 93] - sheep head\n33. [927, 36, 961, 86] - sheep head\n34. [902, 6, 931, 43] - sheep head\n35. [953, 1, 982, 28] - sheep head\n36. [977, 13, 999, 50] - sheep head\n37. [658, 388, 731, 483] - sheep head\n38. [643, 293, 714, 366] - sheep head\n39. [663, 201, 714, 274] - sheep head\n40. [696, 210, 744, 276] - sheep head\n41. [701, 157, 757, 215] - sheep head\n42. [744, 141, 782, 186] - sheep head\n43. [757, 164, 811, 246] - sheep head\n44. [784, 148, 826, 199] - sheep head\n45. [803, 113, 846, 164] - sheep head\n46. [889, 117, 929, 164] - sheep head\n47. [941, 11, 969, 46] - sheep head\n48. [968, 160, 999, 206] - sheep head\n49. [780, 318, 846, 369] - sheep head\n50. [515, 230, 561, 274] - sheep head\n51. [254, 327, 296, 376] - sheep head\n52. [531, 485, 608, 612] - sheep head\n\nWait, but some of these might be duplicates or miscounted. Let's verify with the image.\n\nAlternatively, maybe the correct count is around 50+ heads. Let's make sure each entry is a head.\n\nNow, for each, the label is \"sheep head\".\n\nLet me list all with their bounding boxes:\n\n1. [0, 465, 58, 560]\n2. [66, 379, 154, 479]\n3. [134, 339, 202, 430]\n4. [155, 486, 269, 612]\n5. [196, 319, 262, 410]\n6. [214, 369, 295, 469]\n7. [273, 336, 332, 434]\n8. [299, 283, 362, 359]\n9. [326, 355, 397, 453]\n10. [351, 299, 424, 386]\n11. [418, 343, 497, 464]\n12. [426, 432, 530, 565]\n13. [457, 289, 525, 376]\n14. [456, 226, 520, 293]\n15. [512, 252, 589, 343]\n16. [502, 386, 606, 493]\n17. [556, 319, 635, 416]\n18. [616, 206, 686, 293]\n19. [620, 342, 688, 436]\n20. [621, 464, 717, 588]\n21. [713, 419, 807, 552]\n22. [717, 312, 789, 392]\n23. [786, 354, 877, 483]\n24. [795, 209, 858, 289]\n25. [825, 116, 865, 178]\n26. [829, 19, 869, 78]\n27. [844, 56, 888, 119]\n28. [852, 140, 912, 225]\n29. [863, 297, 949, 393]\n30. [936, 167, 999, 259]\n31. [922, 95, 976, 152]\n32. [887, 37, 926, 93]\n33. [925, 35, 962, 86]\n34. [900, 5, 932, 43]\n35. [951, 0, 983, 28]\n36. [975, 12, 999, 50]\n37. [656, 386, 732, 483]\n38. [641, 292, 715, 366]\n39. [661, 200, 715, 274]\n40. [694, 209, 745, 275]\n41. [699, 156, 758, 215]\n42. [742, 140, 783, 186]\n43. [755, 163, 812, 246]\n44. [782, 147, 827, 199]\n45. [801, 112, 847, 164]\n46. [887, 116, 930, 164]\n47. [939, 10, 970, 46]\n48. [966, 159, 999, 206]\n49. [778, 317, 847, 369]\n50. [513, 228, 562, 274]\n51. [252, 326, 297, 376]\n52. [529, 484, 609, 612]\n\nYes, these are all the visible sheep heads. Now, format each as {\"sheep head\": \"<bbox>\"}.\n"
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": null,
+    "usage": {
+      "prompt_tokens": 1350,
+      "total_tokens": 7289,
+      "completion_tokens": 5939,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}
