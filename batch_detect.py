@@ -53,6 +53,36 @@ def parse_args() -> argparse.Namespace:
         help="Sampling temperature; defaults to 0 for deterministic outputs.",
     )
     parser.add_argument(
+        "--top-p",
+        type=float,
+        default=0.95,
+        help="Top-p nucleus sampling value (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--top-k",
+        type=int,
+        default=20,
+        help="Top-k sampling value (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--repetition-penalty",
+        type=float,
+        default=1.0,
+        help="Repetition penalty applied during decoding (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--presence-penalty",
+        type=float,
+        default=0.0,
+        help="Presence penalty applied during decoding (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=1,
+        help="Random seed for sampling (default: %(default)s).",
+    )
+    parser.add_argument(
         "--max-tokens",
         type=int,
         default=10000,
@@ -153,6 +183,11 @@ def detect_single_image(
     prompt: str,
     model: str,
     temperature: float,
+    top_p: float,
+    top_k: int,
+    repetition_penalty: float,
+    presence_penalty: float,
+    seed: int,
     max_tokens: int,
     api_base: str,
     timeout: float,
@@ -166,11 +201,16 @@ def detect_single_image(
         model,
         temperature,
         max_tokens,
+        top_p,
+        top_k,
+        repetition_penalty,
+        presence_penalty,
+        seed,
         examples=examples,
         context_images=context_images,
     )
     body = request_completion(api_base, payload, timeout)
-    detections, raw_text, raw_body = extract_detections(body)
+    detections, raw_text, raw_body, _ = extract_detections(body)
     detections = list(detections)
     sanitized = sanitize_detections(detections)
     if detections and not sanitized:
@@ -242,6 +282,11 @@ def main() -> None:
                     args.prompt,
                     args.model,
                     args.temperature,
+                    args.top_p,
+                    args.top_k,
+                    args.repetition_penalty,
+                    args.presence_penalty,
+                    args.seed,
                     args.max_tokens,
                     args.api_base,
                     args.timeout,
