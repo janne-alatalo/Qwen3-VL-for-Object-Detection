@@ -14,14 +14,13 @@ dist/
 .mypy_cache/
 .pytest_cache/
 /*.png
-*.jpg
-*.jpeg
+/*.jpg
+/*.jpeg
 *.bmp
 *.gif
 .DS_Store
 *.jsonl
 tmp/
-examples/
 experiments/
 labeled-bbox-dataset-examples/
 local-experiments/
