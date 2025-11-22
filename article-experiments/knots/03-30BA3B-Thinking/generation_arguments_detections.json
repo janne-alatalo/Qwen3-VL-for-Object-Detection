@@ -1,0 +1,30 @@
+{
+  "dataset_root": "/storage/user/alatja/data/wood-knot/Images - 1",
+  "prompt": "This is an image of a wood plank. I need to detect defects in the surface. Detect classes: Quartzity, Live_Knot, Marrow, resin, Dead_Knot, knot_with_crack, Knot_missing and Crack.",
+  "results_path": "article-experiments/knots/03-30BA3B-Thinking/detections.jsonl",
+  "api_base": "http://127.0.0.1:7080/v1",
+  "model": "Qwen3-VL-30B-A3B-Thinking",
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "repetition_penalty": 1.0,
+  "presence_penalty": 0.0,
+  "seed": 1,
+  "max_tokens": 50000,
+  "timeout": 400.0,
+  "max_workers": 5,
+  "extensions": [
+    ".bmp",
+    ".gif",
+    ".jpeg",
+    ".jpg",
+    ".png",
+    ".webp"
+  ],
+  "limit": null,
+  "resume": false,
+  "example": null,
+  "context_image": null,
+  "generation_details_path": "article-experiments/knots/03-30BA3B-Thinking/generation_details_detections.jsonl",
+  "generation_arguments_path": "article-experiments/knots/03-30BA3B-Thinking/generation_arguments_detections.json"
+}
