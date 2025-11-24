@@ -235,27 +235,15 @@ def build_payload(
     else:
         if context_images:
             context_text = (
-                f"The user has requested you to '{prompt}'.\n\n"
-                "The user has provided the attached images to accompany the request. "
-                "The images might aid in fulfilling the request. Answer only with 'OK' if you "
-                "have understood the request. I will then attach the image to analyze."
+                f"{prompt}'"
             )
             context_content: List[Dict[str, Any]] = [{"type": "input_text", "text": context_text}]
             context_content.extend(
                 {"type": "input_image", "detail": "auto", "image_url": image_url}
                 for image_url in context_images
             )
+            context_content.extend([{"type": "input_image", "detail": "auto", "image_url": image_data}])
             messages.append({"role": "user", "content": context_content})
-            messages.append({"role": "assistant", "content": [{"type": "text", "text": "OK"}]})
-            messages.append(
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "input_text", "text": "This is the image."},
-                        {"type": "input_image", "detail": "auto", "image_url": image_data},
-                    ],
-                }
-            )
         else:
             messages.append(
                 {
