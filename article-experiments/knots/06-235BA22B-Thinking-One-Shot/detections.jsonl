@@ -94,7 +94,6 @@
 {"image":"Images - 1/100100029.jpg","detections":[{"bbox_2d":[283,11,447,210],"label":"Live_knot"},{"bbox_2d":[523,0,688,138],"label":"Dead_knot"}]}
 {"image":"Images - 1/100100030.jpg","detections":[{"bbox_2d":[505,237,575,317],"label":"Dead_Knot"},{"bbox_2d":[395,925,466,996],"label":"Live_Knot"},{"bbox_2d":[643,842,736,996],"label":"Dead_Knot"}]}
 {"image":"Images - 1/100100031.jpg","detections":[{"bbox_2d":[62,617,177,771],"label":"Dead_Knot"},{"bbox_2d":[517,795,609,925],"label":"Live_Knot"},{"bbox_2d":[390,0,572,510],"label":"Marrow"}]}
-{"image":"Images - 1/100100033.jpg","detections":[{"bbox_2d":[125,147,282,347],"label":"Live_knot"},{"bbox_2d":[507,170,634,375],"label":"knot_with_crack"},{"bbox_2d":[216,621,263,988],"label":"resin"}]}
 {"image":"Images - 1/100100034.jpg","detections":[{"bbox_2d":[441,772,559,884],"label":"Live_knot"},{"bbox_2d":[800,870,827,996],"label":"Crack"},{"bbox_2d":[293,587,317,667],"label":"resin"}]}
 {"image":"Images - 1/100100035.jpg","detections":[{"bbox_2d":[479,658,534,732],"label":"Live_Knot"},{"bbox_2d":[812,0,912,165],"label":"knot_with_crack"}]}
 {"image":"Images - 1/100100036.jpg","detections":[{"bbox_2d":[402,62,585,373],"label":"Live_Knot"},{"bbox_2d":[176,797,195,983],"label":"resin"}]}
