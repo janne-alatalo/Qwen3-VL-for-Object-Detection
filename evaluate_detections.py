@@ -84,6 +84,11 @@ def parse_args() -> argparse.Namespace:
         help="Compare labels case-insensitively (default: case-sensitive).",
     )
     parser.add_argument(
+        "--lowercase-labels",
+        action="store_true",
+        help="Convert all ground-truth and predicted labels to lowercase before evaluation.",
+    )
+    parser.add_argument(
         "--iou-threshold",
         type=float,
         default=0.5,
@@ -113,12 +118,15 @@ class ClassStats:
 
 
 class LabelRegistry:
-    def __init__(self, ignore_case: bool) -> None:
+    def __init__(self, ignore_case: bool, lowercase_labels: bool) -> None:
         self.ignore_case = ignore_case
+        self.lowercase_labels = lowercase_labels
         self.display: Dict[str, str] = {}
 
     def canonical(self, raw_label: str) -> str:
         raw = (raw_label or "").strip()
+        if self.lowercase_labels:
+            raw = raw.lower()
         if not raw:
             key = EMPTY_LABEL_KEY
             if key not in self.display:
@@ -378,7 +386,7 @@ def evaluate(args: argparse.Namespace) -> None:
         raise FileNotFoundError(f"Labels root not found: {args.labels_root}")
 
     class_lookup = load_class_lookup(args.class_names, args.class_map)
-    registry = LabelRegistry(ignore_case=args.ignore_case)
+    registry = LabelRegistry(ignore_case=args.ignore_case, lowercase_labels=args.lowercase_labels)
     for label in class_lookup.values():
         registry.canonical(label)
 
