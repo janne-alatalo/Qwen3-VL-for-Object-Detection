@@ -2,6 +2,12 @@
 
 This repository contains lightweight helpers for exercising the Qwen3-VL model (served via vLLM’s OpenAI-compatible API) for 2D object detection and human pose estimation.
 
+
+The object detection experiment results are reported in the publication here: TODO ADD LINK. The `article-experiments` directory contains raw data from these experiments.
+
+
+Human pose estimation was not included in the publication, but this repository provides the `query_pose.py` script for that purpose.
+
 ## Prerequisites
 
 - Python 3.9+
