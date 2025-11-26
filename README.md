@@ -16,7 +16,7 @@ python -m pip install requests pillow
 
 ## Environment Variables
 
-Both scripts default to the local vLLM endpoint at `http://10.88.0.1:8000/v1`. Override as needed with the `--api-base` flag.
+Both scripts default to the local vLLM endpoint at `http://127.0.0.1:8000/v1`. Override as needed with the `--api-base` flag.
 
 ## Object Detection (`query_bbox.py`)
 
@@ -28,7 +28,7 @@ python query_bbox.py path/to/image.jpg "Find every bicycle and rider"
 
 Key flags:
 
-- `--api-base`: OpenAI-compatible base URL (default `http://10.88.0.1:8000/v1`)
+- `--api-base`: OpenAI-compatible base URL (default `http://127.0.0.1:8000/v1`)
 - `--model`: Model name served by vLLM (default `qwen3-vl`)
 - `--temperature`, `--top-p`, `--top-k`, `--repetition-penalty`, `--presence-penalty`, `--seed`: Decoding controls (defaults match script help)
 - `--max-tokens`: Increase if the model truncates responses (default `10000`)
@@ -104,7 +104,7 @@ python query_bbox_iterative.py path/to/image.jpg "Find all defects" --max-iterat
 Key options:
 
 - `--max-iterations`: Correction rounds after the initial pass (default `5`)
-- `--api-base`, `--model`, `--temperature`, `--max-tokens`, `--timeout`: Apply to all rounds (defaults: API base `http://10.88.0.1:8000/v1`, model `qwen3-VL`, temperature `0.0`, max tokens `2000`, timeout `120s`)
+- `--api-base`, `--model`, `--temperature`, `--max-tokens`, `--timeout`: Apply to all rounds (defaults: API base `http://127.0.0.1:8000/v1`, model `qwen3-VL`, temperature `0.0`, max tokens `2000`, timeout `120s`)
 - `--output-dir`: If set, saves per-iteration overlays (`*_iter_XX.png`); otherwise displays them at the end
 
 Stops early when the refined detections match the previous round exactly.

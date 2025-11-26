@@ -39,7 +39,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("results_path", type=Path, help="Path to the JSONL results file.")
     parser.add_argument(
         "--api-base",
-        default="http://10.88.0.1:8000/v1",
+        default="http://127.0.0.1:8000/v1",
         help="Base URL for the OpenAI-compatible endpoint (default: %(default)s).",
     )
     parser.add_argument(

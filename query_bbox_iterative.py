@@ -41,7 +41,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--api-base",
-        default="http://10.88.0.1:8000/v1",
+        default="http://127.0.0.1:8000/v1",
         help="OpenAI-compatible base URL (default: %(default)s).",
     )
     parser.add_argument(
