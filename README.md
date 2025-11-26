@@ -29,10 +29,12 @@ python query_bbox.py path/to/image.jpg "Find every bicycle and rider"
 Key flags:
 
 - `--api-base`: OpenAI-compatible base URL (default `http://10.88.0.1:8000/v1`)
-- `--model`: Model name served by vLLM (default `qwen3-VL`)
+- `--model`: Model name served by vLLM (default `/storage/proj/llm/hf-transformers-models/Qwen3-VL-30B-A3B-Thinking`)
+- `--temperature`, `--top-p`, `--top-k`, `--repetition-penalty`, `--presence-penalty`, `--seed`: Decoding controls (defaults match script help)
 - `--max-tokens`: Increase if the model truncates responses (default `10000`)
 - `--timeout`: Request timeout in seconds (default `120`)
 - `--save-path`: Optional file or directory to persist the annotated image
+- `--save-generation-details`: Persist request/response metadata plus CoT reasoning as JSON
 - `--example IMAGE JSON`: Add few-shot examples (image plus JSON annotation). Repeat as needed.
 - `--context-image IMAGE`: Attach additional reference images (without JSON). The final positional
   image argument is always processed. Repeatable.
@@ -75,10 +77,13 @@ python batch_detect.py /data/dataset "Detect every pedestrian" detections.jsonl 
 - Writes JSON Lines records as soon as each image finishes: `{"image": "relative/path.jpg", "detections": [...]}`  
   (paths are stored relative to the dataset root so they can be re-used later)
 - `--resume` skips images already present in the output file, enabling crash-safe restarts
+- `--limit` caps how many images are processed in one run
+- `--generation-details-path` writes per-image generation metadata JSONL; defaults next to results
+- `--generation-arguments-path` snapshots the run configuration to a JSON file
 - `--example IMAGE JSON` can inject the same few-shot examples used by `query_bbox.py`
 - `--context-image IMAGE` attaches extra reference images before each target image. Do not
   combine with `--example`.
-- Shares the same API tuning flags (`--api-base`, `--model`, `--max-tokens`, `--timeout`, `--temperature`)
+- Shares the same API tuning flags (`--api-base`, `--model`, decoding penalties, `--max-tokens`, `--timeout`, `--temperature`, `--seed`); defaults to model `qwen3-VL` and the same API base as `query_bbox.py`
 
 No annotated images are saved during batch jobs—the JSONL file is meant for downstream visualization or evaluation scripts.
 
