@@ -177,15 +177,3 @@ Outputs include per-class precision/recall/F1, mean IoU, micro-averaged metrics,
 
 - Missing joints / malformed boxes  
   Inspect stderr warnings. Adjust the user prompt or temperature, or manually post-process the JSON.
-
-## Development
-
-Standard Git workflow applies:
-
-```bash
-git status
-git add <files>
-git commit -m "Your message"
-```
-
-Feel free to extend these utilities with batch processing, evaluation metrics, or alternative visualization styles to suit your experiments.
