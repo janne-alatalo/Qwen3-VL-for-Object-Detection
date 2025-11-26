@@ -87,6 +87,28 @@ python batch_detect.py /data/dataset "Detect every pedestrian" detections.jsonl 
 
 No annotated images are saved during batch jobs—the JSONL file is meant for downstream visualization or evaluation scripts.
 
+## Iterative Detection (`query_bbox_iterative.py`)
+
+Experimental loop where the model critiques and revises its own boxes:
+
+1) Run a normal detection call (same system prompt as `query_bbox.py`).  
+2) Render boxes with numeric ids on the image.  
+3) Send the original prompt/image plus the overlaid image back to the model, along with its previous JSON, asking it to keep ids and adjust boxes/labels as needed. Repeat until boxes stop changing or `--max-iterations` is reached.
+
+Usage:
+
+```bash
+python query_bbox_iterative.py path/to/image.jpg "Find all defects" --max-iterations 5
+```
+
+Key options:
+
+- `--max-iterations`: Correction rounds after the initial pass (default `5`)
+- `--api-base`, `--model`, `--temperature`, `--max-tokens`, `--timeout`: Apply to all rounds (defaults: API base `http://10.88.0.1:8000/v1`, model `qwen3-VL`, temperature `0.0`, max tokens `2000`, timeout `120s`)
+- `--output-dir`: If set, saves per-iteration overlays (`*_iter_XX.png`); otherwise displays them at the end
+
+Stops early when the refined detections match the previous round exactly.
+
 ## Visualization (`visualize_results.py`)
 
 Convert detection logs back into images with side-by-side comparisons:
