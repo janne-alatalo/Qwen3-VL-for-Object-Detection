@@ -113,6 +113,27 @@ python evaluate_classification.py detections.jsonl \
 - `--negative-regex` is optional; if omitted, unmatched samples follow `--unmatched-policy` (defaults to skip).
 - Metrics include accuracy, precision, recall, F1, specificity, and a confusion matrix.
 
+## Detection Metrics (`evaluate_detections.py`)
+
+Score JSONL detections against YOLO-style ground truth boxes:
+
+```bash
+python evaluate_detections.py detections.jsonl /data/dataset /data/labels --iou-threshold 0.5
+```
+
+Key options:
+
+- `--label-suffix`: Extension for YOLO label files (default `.txt`)
+- `--label-path-template`: Custom format to locate labels (placeholders: `{rel_path}`, `{stem}`, `{name}`, `{parent}`)
+- `--strip-prefix`: Remove a leading path segment before mirroring under the labels root (repeatable)
+- `--missing-label-policy`: `skip` (default) or `empty` to treat missing labels as zero objects
+- `--class-names` / `--class-map`: Supply or override YOLO class IDs to names
+- `--ignore-case`: Match labels case-insensitively
+- `--lowercase-labels`: Force all predicted and ground-truth labels to lowercase before scoring
+- `--iou-threshold`: IoU cutoff for a match (default `0.5`)
+
+Outputs include per-class precision/recall/F1, mean IoU, micro-averaged metrics, and a label-confusion summary for IoU-matched boxes.
+
 ## Troubleshooting
 
 - `Error: Generation stopped because it reached the max token limit`  
