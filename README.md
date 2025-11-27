@@ -177,3 +177,9 @@ Outputs include per-class precision/recall/F1, mean IoU, micro-averaged metrics,
 
 - Missing joints / malformed boxes  
   Inspect stderr warnings. Adjust the user prompt or temperature, or manually post-process the JSON.
+
+# Acknowledgements
+
+This article was written as part of the AI-Boost project (Finnish name: AI-Loikka). The project focuses on identifying use cases for generative AI technologies to boost the competitiveness of companies, with a particular focus on the Central Finland region. The funding program is the European Regional Development Fund (ERDF), project code A81725, and the funding agency is the Regional Council of Central Finland. More information about the project: https://www.jamk.fi/en/research-and-development/rdi-projects/ai-boost
+
+![Co-funded by the European Union](./EN_Co-fundedbytheEU_RGB_POS.png)
